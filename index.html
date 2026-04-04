@@ -8,7 +8,10 @@
 <body>
 <nav id="nb"><div class="ni">
 <div class="logo" onclick="go('home')">desera<span>.</span></div>
-<div class="nl">
+<button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<div class="nl" id="nl">
 <a onclick="go('home')">Home</a>
 <div class="dd-wrap"><span>Destinations <span style="font-size:10px">▾</span></span><div class="dd" id="nav-dd"></div></div>
 <a onclick="go('about')">About</a>

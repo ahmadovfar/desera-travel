@@ -17,7 +17,28 @@ nav.dk .dd{background:rgba(30,30,30,.96);border-color:rgba(255,255,255,.1)}nav.d
 .dd a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:14px;color:var(--g700);cursor:pointer;white-space:nowrap}.dd a:hover{background:var(--g100);color:var(--c1)}.dd a .fl{font-size:18px}
 .nav-cta{padding:11px 28px;background:var(--c1);color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb)}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,96,76,.3)}
-@media(max-width:900px){.nl{display:none}}
+/* BURGER */
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}
+.burger span{display:block;width:24px;height:2px;background:var(--dk);border-radius:2px;transition:all .3s}
+nav.dk .burger span{background:#fff}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+@media(max-width:900px){
+.burger{display:flex}
+.nl{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#FAFAF8;flex-direction:column;align-items:center;justify-content:center;gap:24px;z-index:1001;padding:80px 40px 40px;overflow-y:auto}
+.nl.open{display:flex}
+.nl.open a,.nl.open>div>span{font-size:20px;color:#1A1A1A!important}
+body.dark .nl.open a,body.dark .nl.open>div>span{color:#F3F2EE!important}
+.dd-wrap{padding-bottom:0;margin-bottom:0}
+.dd-wrap .dd{position:static;min-width:auto;box-shadow:none;border:none;background:var(--g100)!important;border-radius:16px;display:grid!important;grid-template-columns:1fr 1fr;gap:4px;margin-top:12px;padding:12px}
+.dd-wrap .dd a{font-size:15px;padding:8px 12px;color:var(--dk)!important}
+.nav-cta{margin-top:16px}
+body.dark .nl.open{background:#1A1917}
+nav:has(.nl.open){backdrop-filter:none;-webkit-backdrop-filter:none;position:static;border-bottom:none}
+nav:has(.nl.open) .ni{position:fixed;top:0;left:0;right:0;z-index:1002;height:72px;padding:0 20px;background:inherit}
+}
 
 /* SECTIONS */
 .sec{padding:100px 0}.con{max-width:var(--mx);margin:0 auto;padding:0 40px}

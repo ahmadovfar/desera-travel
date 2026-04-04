@@ -14,7 +14,18 @@ document.getElementById('nav-dd').innerHTML = ddhtml;
 document.getElementById('ft-dd').innerHTML = COUNTRIES.slice(0, 6).map(c => '<a data-nav="' + c.id + '">' + c.flag + ' ' + c.n + '</a>').join('');
 
 // ---- ROUTING ----
-function go(p) {
+function pageToPath(p) {
+  if (p === 'home') return '/';
+  return '/' + p;
+}
+
+function pathToPage(path) {
+  const p = path.replace(/^\//, '') || 'home';
+  return p;
+}
+
+function go(p, pushState = true) {
+  closeMenu();
   const app = document.getElementById('app');
   app.style.opacity = '0';
   setTimeout(() => {
@@ -36,10 +47,18 @@ function go(p) {
     document.getElementById('nb').className = 'dk';
     updateNavLang();
     app.style.opacity = '1';
+    if (pushState) {
+      history.pushState({ page: p }, '', pageToPath(p));
+    }
     setTimeout(() => { initAnim(); animateCounters(); }, 200);
   }, 200);
 }
 window.go = go;
+
+window.addEventListener('popstate', (e) => {
+  const page = e.state?.page || pathToPage(location.pathname);
+  go(page, false);
+});
 
 // ---- DELEGATED CLICK HANDLER ----
 document.addEventListener('click', (e) => {
@@ -95,6 +114,18 @@ function updateNavLang() {
   if (links[3]) links[3].textContent = E ? 'Контакты' : 'Contact';
   const ddSpan = document.querySelector('.dd-wrap > span');
   if (ddSpan) ddSpan.innerHTML = (E ? 'Направления' : 'Destinations') + ' <span style="font-size:10px">▾</span>';
+}
+
+// ---- MOBILE MENU ----
+function toggleMenu() {
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('nl').classList.toggle('open');
+}
+window.toggleMenu = toggleMenu;
+
+function closeMenu() {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('nl').classList.remove('open');
 }
 
 // ---- DARK MODE ----
@@ -224,4 +255,6 @@ window.tbNext = function () {
 };
 
 // ---- INIT ----
-go('home');
+const initialPage = pathToPage(location.pathname);
+go(initialPage, false);
+history.replaceState({ page: initialPage }, '', pageToPath(initialPage));

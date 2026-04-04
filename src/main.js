@@ -29,6 +29,7 @@ function go(p, pushState = true) {
   closeMenu();
   const app = document.getElementById('app');
   app.style.opacity = '0';
+  app.style.transform = 'translateY(16px)';
   setTimeout(() => {
     setCurPage(p);
     const c = COUNTRIES.find(x => x.id === p);
@@ -52,6 +53,7 @@ function go(p, pushState = true) {
     updateNavLang();
     updateMeta(p, c);
     app.style.opacity = '1';
+    app.style.transform = 'translateY(0)';
     if (pushState) {
       history.pushState({ page: p }, '', pageToPath(p));
     }
@@ -386,3 +388,15 @@ window.tbNext = function () {
 const initialPage = pathToPage(location.pathname);
 go(initialPage, false);
 history.replaceState({ page: initialPage }, '', pageToPath(initialPage));
+
+// ---- HIDE PRELOADER ----
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.style.opacity = '0';
+      preloader.style.visibility = 'hidden';
+      setTimeout(() => preloader.remove(), 500);
+    }, 400);
+  }
+});

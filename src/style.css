@@ -174,10 +174,10 @@ footer{background:#fff;border-top:1px solid var(--g200);padding:64px 0 32px}
 @keyframes wa-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
 
 /* BACK TO TOP */
-.btt{position:fixed;bottom:100px;right:28px;z-index:998;width:44px;height:44px;background:#fff;border:1px solid var(--g200);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.08);opacity:0;transform:translateY(20px);transition:all .3s;font-size:18px;color:var(--g700)}.btt.show{opacity:1;transform:translateY(0)}.btt:hover{background:var(--c1);color:#fff;border-color:var(--c1)}
+.btt{position:fixed;bottom:100px;right:28px;z-index:998;width:48px;height:48px;background:#fff;border:1px solid var(--g200);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.1);opacity:0;transform:translateY(20px) scale(.8);transition:all .4s cubic-bezier(.34,1.56,.64,1);font-size:18px;color:var(--g700)}.btt.show{opacity:1;transform:translateY(0) scale(1)}.btt:hover{background:var(--acc);color:#fff;border-color:var(--acc);transform:translateY(-4px) scale(1.1);box-shadow:0 8px 24px rgba(232,96,76,.3)}.btt:active{transform:translateY(0) scale(.95)}
 
 /* TRANSITIONS & ANIMATIONS */
-#app{transition:opacity .3s ease}#app.fade{opacity:0}
+#app{transition:opacity .3s ease,transform .3s ease}#app.fade{opacity:0}
 .anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.anim.in{opacity:1;transform:translateY(0)}
 .counter{font-variant-numeric:tabular-nums}
 

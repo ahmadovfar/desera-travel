@@ -17,7 +17,21 @@ export function renderCountry(c) {
     { ic: '📦', bg: '#FFF1F0', t: E ? 'Пакеты' : 'Packages', p: E ? 'Готовые и кастомные.' : 'Ready-made and customizable.' }
   ];
   const cName = E ? c.nr : c.n;
-  return '<section class="d-hero"><div class="d-hero-bg" style="background-image:url(\'' + c.img + '\')"></div><div class="d-hero-c"><div style="font-size:56px;margin-bottom:8px">' + c.flag + '</div><h1>' + cName + '</h1><p>' + L.h + '</p></div></section>' +
+  const seoH1 = {
+    uae: { en: 'UAE DMC Partner — Hotels, Tours & Transfers in Dubai & Abu Dhabi', ru: 'DMC Партнёр в ОАЭ — Отели, туры и трансферы в Дубае и Абу-Даби' },
+    thailand: { en: 'Thailand DMC Partner — Hotels & Tours in Bangkok, Phuket & Koh Samui', ru: 'DMC Партнёр в Таиланде — Отели и туры в Бангкоке, Пхукете и Самуи' },
+    vietnam: { en: 'Vietnam DMC Partner — Hotels, Cruises & Tours in Hanoi & Ho Chi Minh', ru: 'DMC Партнёр во Вьетнаме — Отели, круизы и туры в Ханое и Хошимине' },
+    china: { en: 'China DMC Partner — Hotels, Group Tours & Transfers in Beijing & Shanghai', ru: 'DMC Партнёр в Китае — Отели, групповые туры в Пекине и Шанхае' },
+    turkey: { en: 'Turkey DMC Partner — Hotels & Tours in Istanbul, Antalya & Cappadocia', ru: 'DMC Партнёр в Турции — Отели и туры в Стамбуле, Анталии и Каппадокии' },
+    egypt: { en: 'Egypt DMC Partner — Hotels, Nile Cruises & Tours in Cairo & Sharm', ru: 'DMC Партнёр в Египте — Отели, круизы по Нилу и туры в Каире и Шарме' },
+    europe: { en: 'Europe DMC Partner — Hotels & Multi-Country Tours in Paris, Rome & More', ru: 'DMC Партнёр в Европе — Отели и мульти-страновые туры в Париже, Риме' },
+    maldives: { en: 'Maldives DMC Partner — Luxury Resorts & Overwater Villa Packages', ru: 'DMC Партнёр на Мальдивах — Люкс-резорты и виллы над водой' },
+    japan: { en: 'Japan DMC Partner — Hotels, Ryokans & Tours in Tokyo & Kyoto', ru: 'DMC Партнёр в Японии — Отели, рёканы и туры в Токио и Киото' },
+    indonesia: { en: 'Indonesia DMC Partner — Hotels, Villas & Tours in Bali & Komodo', ru: 'DMC Партнёр в Индонезии — Отели, виллы и туры на Бали и Комодо' },
+    mauritius: { en: 'Mauritius DMC Partner — Luxury Resorts & Honeymoon Packages', ru: 'DMC Партнёр на Маврикии — Люкс-резорты и свадебные пакеты' }
+  };
+  const h1Text = seoH1[c.id] ? seoH1[c.id][getLang()] : cName;
+  return '<section class="d-hero"><div class="d-hero-bg" style="background-image:url(\'' + c.img + '\')"></div><div class="d-hero-c"><div style="font-size:56px;margin-bottom:8px">' + c.flag + '</div><h1>' + h1Text + '</h1><p>' + L.h + '</p></div></section>' +
     '<div class="live"><div class="live-i"><div class="live-item"><div class="live-dot"></div>' + (E ? 'Местное время' : 'Local time') + ': <span class="val" id="ct">--:--</span></div><div class="live-item">🌡 ' + c.wth + '</div><div class="live-item">💱 1 USD = <span class="val">' + c.rate + ' ' + c.cur + '</span></div><div class="live-item">🏛 ' + (E ? 'Столица' : 'Capital') + ': <span class="val">' + c.cap + '</span></div></div></div>' +
     '<section class="d-about"><div class="con"><div class="d-about-txt"><div class="stag">' + (E ? 'Откройте ' + cName : 'Discover ' + c.n) + '</div><h2>' + (E ? 'Ваш DMC-партнёр по ' + cName : 'Your DMC partner for ' + c.n) + '</h2><p>' + L.d1 + '</p><p>' + L.d2 + '</p></div><div class="d-about-img"><img loading="lazy" src="' + c.about_img + '" alt="' + c.n + '"></div></div></section>' +
     '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Ключевые города' : 'Key destinations') + '</div><h2 class="stitle">' + (E ? 'Исследуйте ' + cName : 'Explore ' + c.n) + '</h2></div><div class="cities-grid">' + c.cities.map(function (ci) { return '<div class="city-card"><img loading="lazy" src="' + ci.img + '" alt="' + ci.n + '"><div class="city-ov"><div class="city-n">' + ci.n + '</div><div class="city-s">' + ci.s + '</div></div></div>'; }).join('') + '</div></div></section>' +

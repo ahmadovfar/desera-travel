@@ -276,15 +276,19 @@ function updatePageSchema(p, country, title, desc, img, url) {
     breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Destinations' });
     breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 3, 'name': country.n, 'item': url });
 
+    var topTours = country.tours.slice(0, 3).map(function(t) { return t.t; }).join(', ');
+    var topCities = country.cities.map(function(ci) { return ci.n; }).join(', ');
+    var uspText = country.usp.map(function(u) { return u.n + ' ' + u.t; }).join(', ');
+
     const faq = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       'mainEntity': [
-        { '@type': 'Question', 'name': 'What is the best season to visit ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.season } },
-        { '@type': 'Question', 'name': 'Do I need a visa for ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.visa } },
-        { '@type': 'Question', 'name': 'What travel tips should I know for ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.tips } },
-        { '@type': 'Question', 'name': 'What currency is used in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Currency: ' + country.cur + '. Exchange rate: 1 USD = ' + country.rate + ' ' + country.cur + '.' } },
-        { '@type': 'Question', 'name': 'Why choose Desera as your DMC partner in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Desera Travel offers direct contracts, competitive net rates, local ground support, and a 2-hour response guarantee.' } }
+        { '@type': 'Question', 'name': 'Do I need a visa to visit ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.visa + ' Desera Travel assists B2B partners with visa support for group bookings of 10+ travelers.' } },
+        { '@type': 'Question', 'name': 'What is the best time to visit ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.season + ' For travel agencies, the shoulder season offers 30-50% lower hotel rates with strong margins. Desera Travel provides seasonal deals through our B2B platform.' } },
+        { '@type': 'Question', 'name': 'What are the top tourist attractions in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Key cities: ' + topCities + '. Popular tours: ' + topTours + '. ' + L.d1 + ' Desera Travel offers instant booking for all attractions at competitive net rates.' } },
+        { '@type': 'Question', 'name': 'What currency is used in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The official currency is ' + country.cur + '. Exchange rate: 1 USD = ' + country.rate + ' ' + country.cur + '. Credit cards are widely accepted. Desera Travel provides net rates in USD for partner billing.' } },
+        { '@type': 'Question', 'name': 'Why choose Desera Travel as your DMC partner in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Desera Travel is a global DMC with direct contracts and local teams. Advantages in ' + country.n + ': ' + uspText + '. Competitive net rates, 2-hour response guarantee, B2B platform with real-time availability, 24/7 support in English and Russian.' } }
       ]
     };
 

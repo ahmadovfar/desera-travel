@@ -46,6 +46,7 @@ function go(p, pushState = true) {
     window.scrollTo(0, 0);
     document.getElementById('nb').className = 'dk';
     updateNavLang();
+    updateMeta(p, c);
     app.style.opacity = '1';
     if (pushState) {
       history.pushState({ page: p }, '', pageToPath(p));
@@ -114,6 +115,52 @@ function updateNavLang() {
   if (links[3]) links[3].textContent = E ? 'Контакты' : 'Contact';
   const ddSpan = document.querySelector('.dd-wrap > span');
   if (ddSpan) ddSpan.innerHTML = (E ? 'Направления' : 'Destinations') + ' <span style="font-size:10px">▾</span>';
+}
+
+// ---- META / SEO ----
+function updateMeta(p, country) {
+  const E = getLang() === 'ru';
+  const base = 'Desera Travel';
+  let title, desc, img;
+
+  if (country) {
+    const name = E ? country.nr : country.n;
+    title = name + ' — ' + base + ' | DMC';
+    desc = country[getLang()].h;
+    img = country.img;
+  } else if (p === 'about') {
+    title = (E ? 'О компании' : 'About Us') + ' — ' + base;
+    desc = E ? 'Мы создаём незабываемые travel-продукты по всему миру.' : 'We create unforgettable travel experiences worldwide.';
+  } else if (p === 'blog') {
+    title = (E ? 'Блог' : 'Blog') + ' — ' + base;
+    desc = E ? 'Полезное для партнёров: тренды, маржинальность, рынки.' : 'Insights for partners: trends, margins, markets.';
+  } else if (p === 'partner') {
+    title = (E ? 'Стать партнёром' : 'Become a Partner') + ' — ' + base;
+    desc = E ? 'Заполните форму — мы ответим в течение 2 часов.' : 'Fill out the form — we respond within 2 hours.';
+  } else {
+    title = base + ' — Global DMC Partner';
+    desc = E ? 'Исключительные travel-продукты в 11+ направлениях мира.' : 'Extraordinary travel experiences across 11+ destinations.';
+    img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200';
+  }
+
+  document.title = title;
+  setMeta('description', desc);
+  setMeta('og:title', title);
+  setMeta('og:description', desc);
+  if (img) setMeta('og:image', img);
+  setMeta('og:url', location.href);
+  setMeta('og:type', 'website');
+}
+
+function setMeta(name, content) {
+  const attr = name.startsWith('og:') ? 'property' : 'name';
+  let el = document.querySelector('meta[' + attr + '="' + name + '"]');
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
 }
 
 // ---- MOBILE MENU ----

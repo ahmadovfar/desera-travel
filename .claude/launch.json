@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "desera-dev",
+      "runtimeExecutable": "/Users/ahmadovfar/.local/share/fnm/node-versions/v24.14.1/installation/bin/npx",
+      "runtimeArgs": ["vite", "--host"],
+      "port": 5173,
+      "env": {
+        "PATH": "/Users/ahmadovfar/.local/share/fnm/node-versions/v24.14.1/installation/bin:/usr/bin:/bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desera Travel — Global DMC Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#E8604C;--c1h:#D4513F;--c1l:#FEF0EE;--c2:#1B6B4A;--c2l:#EDF7F2;--c3:#2563EB;--c3l:#EFF6FF;--gd:#D4A843;--gdl:#FDF8EC;--dk:#1A1A1A;--g50:#FAFAF8;--g100:#F3F2EE;--g200:#E5E3DC;--g300:#C8C5BA;--g500:#8A8680;--g700:#4A4844;--fd:'DM Serif Display',Georgia,serif;--fb:'Plus Jakarta Sans',-apple-system,sans-serif;--mx:1320px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--fb);color:var(--g700);background:var(--g50);overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,248,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--g200)}
+nav.dk{background:rgba(26,26,26,.88);border-color:rgba(255,255,255,.08)}nav.dk .logo,nav.dk .nl a{color:#fff}nav.dk .nav-cta{background:#fff;color:var(--dk)}
+nav.dk .dd{background:rgba(30,30,30,.96);border-color:rgba(255,255,255,.1)}nav.dk .dd a{color:rgba(255,255,255,.7)}nav.dk .dd a:hover{color:var(--c1);background:rgba(255,255,255,.05)}
+.ni{max-width:var(--mx);margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--fd);font-size:26px;color:var(--dk);cursor:pointer}.logo span{color:var(--c1)}
+.nl{display:flex;align-items:center;gap:24px}
+.nl a,.nl>div>span{color:var(--g700);font-size:14px;font-weight:500;cursor:pointer}.nl a:hover,.nl>div>span:hover{color:var(--c1)}
+.dd-wrap{position:relative;padding-bottom:14px;margin-bottom:-14px}
+.dd{display:none;position:absolute;top:100%;left:-20px;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);border:1px solid var(--g200);border-radius:16px;padding:16px 12px 12px;min-width:280px;box-shadow:0 16px 48px rgba(0,0,0,.1);z-index:99}
+.dd-wrap:hover .dd{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.dd a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:14px;color:var(--g700);cursor:pointer;white-space:nowrap}.dd a:hover{background:var(--g100);color:var(--c1)}.dd a .fl{font-size:18px}
+.nav-cta{padding:11px 28px;background:var(--c1);color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,96,76,.3)}
+@media(max-width:900px){.nl{display:none}}
+.sec{padding:100px 0}.con{max-width:var(--mx);margin:0 auto;padding:0 40px}
+.sh{text-align:center;max-width:680px;margin:0 auto 64px}
+.stag{display:inline-block;font-size:13px;font-weight:700;color:var(--c1);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.stitle{font-family:var(--fd);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;color:var(--dk);margin-bottom:16px}
+.sdesc{font-size:17px;line-height:1.7;color:var(--g500);font-weight:300}
+.bp{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--c1);color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--fb)}.bp:hover{background:var(--c1h);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,96,76,.35)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 2s ease}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,20,30,.88) 0%,rgba(15,20,30,.75) 35%,rgba(15,20,30,.3) 65%,rgba(15,20,30,.15) 100%)}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,72px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:24px;max-width:600px}
+.hero h1 em{font-style:italic;color:var(--gd)}
+.hero-sub{font-size:18px;line-height:1.7;color:rgba(255,255,255,.7);max-width:480px;margin-bottom:40px;font-weight:300}
+.hero-c{position:relative;z-index:2;max-width:var(--mx);width:100%;margin:0 auto;padding:160px 40px 100px}
+.hero-dots{display:flex;gap:10px;margin-top:48px}
+.hero-dot{width:48px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
+.hero-dot.active{background:var(--c1);width:64px}
+@media(max-width:768px){.hero-c{padding:120px 24px 80px}}
+.hero-c{position:relative;z-index:2;max-width:var(--mx);width:100%;margin:0 auto;padding:140px 40px 100px}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,72px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:24px;max-width:700px}
+.hero h1 em{font-style:italic;color:var(--gd)}
+.hero-sub{font-size:18px;line-height:1.7;color:rgba(255,255,255,.8);max-width:520px;margin-bottom:40px;font-weight:300}
+.hero-act{display:flex;gap:16px;flex-wrap:wrap}
+.bs{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:100px;font-size:16px;font-weight:500;cursor:pointer;font-family:var(--fb)}.bs:hover{background:rgba(255,255,255,.2)}
+.trust{background:#fff;border-bottom:1px solid var(--g200);padding:20px 0}
+.trust-i{max-width:var(--mx);margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ti{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--g700);font-weight:500}
+.ti-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pc{padding:36px 28px;background:#fff;border:1px solid var(--g200);border-radius:20px;transition:all .4s}.pc:hover{border-color:var(--c1);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.pc-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.pt{font-family:var(--fd);font-size:20px;color:var(--dk);margin-bottom:10px}
+.pp{font-size:14px;line-height:1.7;color:var(--g500);font-weight:300}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.dc{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;transition:all .4s;aspect-ratio:3/4;background-size:cover;background-position:center}
+.dc:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.dc-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.dc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.15)}
+.dc-fl{font-size:28px;margin-bottom:6px}.dc-n{font-family:var(--fd);font-size:22px;color:#fff}.dc-s{font-size:13px;color:rgba(255,255,255,.7);margin-top:4px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sv{border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--g200);transition:all .4s}.sv:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.sv-img{height:200px;overflow:hidden}.sv-img img{width:100%;height:100%;object-fit:cover}
+.sv-b{padding:28px}.sv-t{font-family:var(--fd);font-size:20px;color:var(--dk);margin-bottom:10px}.sv-p{font-size:14px;line-height:1.7;color:var(--g500);font-weight:300}
+.d-hero{height:80vh;min-height:500px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.d-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}.d-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.15) 50%);z-index:1}
+.d-hero-c{position:relative;z-index:2;max-width:var(--mx);width:100%;margin:0 auto;padding:0 40px 60px}
+.d-hero-c h1{font-family:var(--fd);font-size:clamp(40px,6vw,64px);color:#fff;margin-bottom:12px}
+.d-hero-c>p{font-size:20px;color:rgba(255,255,255,.7);font-weight:300}
+.live{background:#fff;border-bottom:1px solid var(--g200);padding:16px 0}
+.live-i{max-width:var(--mx);margin:0 auto;padding:0 40px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.live-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--g700)}.live-item .val{font-weight:700;color:var(--dk);font-size:16px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.d-about{padding:80px 0}.d-about .con{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.d-about-txt h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,38px);color:var(--dk);margin-bottom:20px}
+.d-about-txt p{font-size:16px;line-height:1.8;color:var(--g500);font-weight:300;margin-bottom:20px}
+.d-about-img{border-radius:24px;overflow:hidden;aspect-ratio:4/3}.d-about-img img{width:100%;height:100%;object-fit:cover}
+.cities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.city-card{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4}.city-card img{width:100%;height:100%;object-fit:cover}
+.city-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.city-n{font-family:var(--fd);font-size:20px;color:#fff}.city-s{font-size:13px;color:rgba(255,255,255,.7);margin-top:4px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.prod{background:#fff;border:1px solid var(--g200);border-radius:20px;padding:32px;text-align:center;transition:all .4s}.prod:hover{border-color:var(--c1);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.prod-ic{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.prod-t{font-family:var(--fd);font-size:20px;color:var(--dk);margin-bottom:8px}.prod-p{font-size:14px;line-height:1.6;color:var(--g500);font-weight:300}
+.tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.tour{border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--g200);transition:all .4s}.tour:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.tour-img{height:220px;overflow:hidden;position:relative}.tour-img img{width:100%;height:100%;object-fit:cover}
+.tour-dur{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px}
+.tour-b{padding:24px}.tour-t{font-family:var(--fd);font-size:18px;color:var(--dk);margin-bottom:8px}.tour-p{font-size:14px;line-height:1.6;color:var(--g500);font-weight:300}
+.photo-strip{display:flex;gap:12px;overflow-x:auto;padding:0 40px 20px;scroll-snap-type:x mandatory}.photo-strip img{height:280px;border-radius:16px;scroll-snap-align:start;flex-shrink:0;object-fit:cover}
+.usp{background:linear-gradient(135deg,var(--dk),#1f2937);padding:80px 0;position:relative;overflow:hidden}
+.usp-c{position:relative;z-index:2;max-width:var(--mx);margin:0 auto;padding:0 40px}
+.usp-h{text-align:center;margin-bottom:48px}.usp-h h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,38px);color:#fff;margin-bottom:12px}.usp-h p{font-size:17px;color:rgba(255,255,255,.5);font-weight:300}
+.usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.usp-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px}
+.usp-num{font-family:var(--fd);font-size:36px;color:var(--c1);margin-bottom:8px}.usp-t{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px}.usp-p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;font-weight:300}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.info-card{background:#fff;border:1px solid var(--g200);border-radius:16px;padding:24px;text-align:center}
+.info-ic{font-size:28px;margin-bottom:12px}.info-t{font-size:13px;font-weight:700;color:var(--dk);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}.info-v{font-size:15px;color:var(--g500);line-height:1.5}
+.form-box{max-width:720px;margin:0 auto;padding:48px;background:#fff;border:1px solid var(--g200);border-radius:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:span 2}
+.form-field label{font-size:13px;font-weight:600;color:var(--dk);text-transform:uppercase;letter-spacing:.3px}
+.form-field input,.form-field select,.form-field textarea{padding:14px 18px;border:1px solid var(--g200);border-radius:12px;font-size:15px;font-family:var(--fb);color:var(--dk);background:#fff;outline:none}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--c1)}
+.form-field textarea{resize:vertical;min-height:80px}
+.checks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 20px}
+.check-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--g700)}.check-item input{accent-color:var(--c1);width:16px;height:16px}
+footer{background:#fff;border-top:1px solid var(--g200);padding:64px 0 32px}
+.ft{max-width:var(--mx);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-b .logo{margin-bottom:16px;display:block}.ft-b p{font-size:14px;color:var(--g500);line-height:1.7;max-width:300px;font-weight:300}
+.ft-c h4{font-size:13px;font-weight:700;color:var(--dk);letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+.ft-c a{display:block;font-size:14px;color:var(--g500);margin-bottom:10px;cursor:pointer}.ft-c a:hover{color:var(--c1)}
+.fbar{max-width:var(--mx);margin:0 auto;padding:20px 40px 0;border-top:1px solid var(--g200);display:flex;justify-content:space-between;font-size:13px;color:var(--g300)}
+@media(max-width:1024px){.pgrid,.cities-grid,.info-grid{grid-template-columns:repeat(2,1fr)}.dgrid{grid-template-columns:repeat(2,1fr)}.dc:nth-child(1){grid-column:span 2;grid-row:span 1;aspect-ratio:2/1}.sgrid,.tour-grid,.prod-grid,.usp-grid{grid-template-columns:1fr 1fr}.d-about .con{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.form-field.full{grid-column:span 1}.checks-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.con{padding:0 20px}.sec{padding:64px 0}.pgrid,.sgrid,.dgrid,.tour-grid,.prod-grid,.cities-grid,.info-grid,.usp-grid{grid-template-columns:1fr}.dc:nth-child(1){grid-column:span 1;aspect-ratio:3/4}.hero-act{flex-direction:column;align-items:flex-start}.ft{grid-template-columns:1fr}.fbar{flex-direction:column;gap:8px;text-align:center}.d-hero{height:60vh}.nl{display:none}}
+#svc-panel{transition:opacity .3s ease}
+.svc-tab:hover{background:var(--g100)!important}
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;font-size:28px}.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+.wa-float .wa-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid #25D366;animation:wa-ring 2s infinite}
+@keyframes wa-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
+/* BACK TO TOP */
+.btt{position:fixed;bottom:100px;right:28px;z-index:998;width:44px;height:44px;background:#fff;border:1px solid var(--g200);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.08);opacity:0;transform:translateY(20px);transition:all .3s;font-size:18px;color:var(--g700)}.btt.show{opacity:1;transform:translateY(0)}.btt:hover{background:var(--c1);color:#fff;border-color:var(--c1)}
+/* PAGE TRANSITION */
+#app{transition:opacity .3s ease}#app.fade{opacity:0}
+/* SCROLL ANIM */
+.anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.anim.in{opacity:1;transform:translateY(0)}
+/* COUNTER */
+.counter{font-variant-numeric:tabular-nums}
+/* DARK MODE */
+body.dark{--g50:#1A1917;--g100:#2C2A26;--g200:#3a3834;--g300:#4A4844;--g500:#8A8680;--g700:#C8C5BA;--dk:#F3F2EE;background:var(--g50)}
+body.dark nav{background:rgba(26,25,23,.92);border-color:rgba(255,255,255,.06)}body.dark .logo,body.dark .nl a{color:#F3F2EE}
+body.dark .dd{background:rgba(40,38,34,.98);border-color:rgba(255,255,255,.08)}body.dark .dd a{color:rgba(255,255,255,.7)}body.dark .dd a:hover{background:rgba(255,255,255,.06)}
+body.dark .trust{background:#222;border-color:rgba(255,255,255,.06)}
+body.dark .pc,.dark .sv,.dark .prod,.dark .tour,.dark .info-card,.dark .form-box,.dark .step{background:#222;border-color:rgba(255,255,255,.08)}
+body.dark .pc:hover,.dark .prod:hover,.dark .tour:hover{border-color:var(--c1);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+body.dark footer{background:#1A1917;border-color:rgba(255,255,255,.06)}
+body.dark .form-field input,.dark .form-field select,.dark .form-field textarea{background:#2C2A26;border-color:rgba(255,255,255,.1);color:#F3F2EE}
+body.dark .nav-cta{background:var(--c1);color:#fff}
+.dm-toggle{display:flex;align-items:center;gap:4px;cursor:pointer;font-size:18px;padding:4px 8px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-family:var(--fb);transition:all .3s}
+body.dark .dm-toggle{border-color:rgba(255,255,255,.15)}
+/* TRIP BUILDER */
+.tb{background:linear-gradient(135deg,#1a2744,#0f1b33);border-radius:24px;padding:48px;position:relative;overflow:hidden}
+.tb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(232,96,76,.1),transparent 60%)}
+.tb-inner{position:relative;z-index:2}
+.tb h3{font-family:var(--fd);font-size:28px;color:#fff;margin-bottom:8px}
+.tb>p{color:rgba(255,255,255,.5);margin-bottom:32px}
+.tb-steps{display:flex;gap:12px;margin-bottom:32px}
+.tb-step{flex:1;padding:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;text-align:center;cursor:pointer;transition:all .3s}
+.tb-step.active{background:rgba(232,96,76,.15);border-color:var(--c1)}
+.tb-step-n{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.tb-step-t{font-size:14px;font-weight:600;color:#fff}
+.tb-panel{min-height:120px}
+.tb-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tb-opt{padding:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;cursor:pointer;text-align:center;transition:all .2s;color:rgba(255,255,255,.7);font-size:14px}
+.tb-opt:hover,.tb-opt.sel{background:rgba(232,96,76,.15);border-color:var(--c1);color:#fff}
+.tb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.tb-input{padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;font-size:15px;font-family:var(--fb);outline:none;width:100%}.tb-input:focus{border-color:var(--c1)}
+.tb-input::placeholder{color:rgba(255,255,255,.3)}
+/* SEASONAL CALENDAR */
+.cal-grid{display:grid;grid-template-columns:auto repeat(12,1fr);gap:2px;font-size:12px;margin-top:32px}
+.cal-h{padding:8px 6px;text-align:center;font-weight:600;color:var(--g500)}
+.cal-c{padding:8px 4px;text-align:center;font-weight:600;font-size:13px;color:var(--dk)}
+.cal-cell{padding:8px 4px;text-align:center;border-radius:6px;font-size:11px;font-weight:500}
+.cal-best{background:#dcfce7;color:#166534}.cal-good{background:#fef9c3;color:#854d0e}.cal-ok{background:#fee2e2;color:#991b1b}
+body.dark .cal-best{background:#064e3b;color:#a7f3d0}body.dark .cal-good{background:#78350f;color:#fde68a}body.dark .cal-ok{background:#7f1d1d;color:#fca5a5}
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.test-card{background:#fff;border:1px solid var(--g200);border-radius:20px;padding:32px;transition:all .3s}body.dark .test-card{background:#222;border-color:rgba(255,255,255,.08)}
+.test-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.test-q{font-size:15px;line-height:1.7;color:var(--g700);font-style:italic;margin-bottom:20px;font-weight:300}
+.test-author{display:flex;align-items:center;gap:12px}
+.test-av{width:40px;height:40px;border-radius:50%;background:var(--c1l);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--c1)}
+.test-name{font-size:14px;font-weight:600;color:var(--dk)}.test-role{font-size:12px;color:var(--g500)}
+/* TRUST LOGOS */
+.trust-logos{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;padding:32px 0;opacity:.5}
+.trust-logo{font-size:14px;font-weight:700;color:var(--g500);letter-spacing:1px;text-transform:uppercase}
+@media(max-width:768px){.tb-steps{flex-direction:column}.tb-opts{grid-template-columns:1fr 1fr}.test-grid{grid-template-columns:1fr}.cal-grid{overflow-x:auto}.tb-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav id="nb"><div class="ni">
+<div class="logo" onclick="go('home')">desera<span>.</span></div>
+<div class="nl">
+<a onclick="go('home')">Home</a>
+<div class="dd-wrap"><span>Destinations</span><div class="dd" id="nav-dd"></div></div>
+<a onclick="go('about')">About</a>
+<a onclick="go('blog')">Blog</a>
+<a onclick="go('partner')">Contact</a>
+<div style="display:flex;gap:2px;background:var(--g100);border-radius:100px;padding:3px" id="lang-toggle"><button onclick="setLang('en')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)" id="lb-en">EN</button><button onclick="setLang('ru')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)" id="lb-ru">RU</button></div>
+<button class="dm-toggle" onclick="toggleDark()" id="dm-btn" title="Dark mode">☀️</button>
+<button class="nav-cta" onclick="go('partner')">Become a partner</button>
+</div>
+</div></nav>
+
+<div id="app"></div>
+
+<a class="wa-float" href="https://wa.me/971000000000" target="_blank" title="Chat on WhatsApp">💬<div class="wa-pulse"></div></a>
+<div class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<footer><div class="ft">
+<div class="ft-b"><div class="logo">desera<span>.</span></div><p>Global DMC. Travel experiences across 11+ destinations worldwide.</p></div>
+<div class="ft-c"><h4>Destinations</h4><div id="ft-dd"></div></div>
+<div class="ft-c"><h4>Company</h4><a onclick="go('about')" style="cursor:pointer">About us</a><a onclick="go('blog')" style="cursor:pointer">Blog</a><a onclick="go('partner')" style="cursor:pointer">Partnership</a></div>
+<div class="ft-c"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#f891969e97b89c9d8b9d8a998c8a998e9d94d69b9795"><span class="__cf_email__" data-cfemail="771e1911183713120412051603051601121b5914181a">[email&#160;protected]</span></a><a>WhatsApp</a><a>LinkedIn</a><a>Instagram</a></div>
+</div><div class="fbar"><span>© 2026 Desera Travel.</span><span>Dubai, UAE</span></div></footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var LANG='en';
+var CUR_PAGE='home';
+var COUNTRIES=[
+{id:'uae',n:'UAE',nr:'ОАЭ',flag:'🇦🇪',sub:'Dubai · Abu Dhabi',img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920',tz:'Asia/Dubai',cur:'AED',rate:'3.67',wth:'34°C ☀️',cap:'Abu Dhabi',en:{h:'Where futuristic skylines meet desert traditions',d1:'The UAE offers the Burj Khalifa, luxury malls, Abu Dhabi\'s Louvre and Sheikh Zayed Mosque.',d2:'Desert safaris, beach resorts, theme parks, and global cuisine. Luxury, adventure, culture or family fun.',visa:'Most: 30-90 day visa on arrival.',season:'Oct-Apr best. Peak Dec-Feb.',tips:'Very safe. English spoken. Modest dress.'},ru:{h:'Где небоскрёбы встречают традиции пустыни',d1:'ОАЭ: Бурдж-Халифа, торговые центры, Лувр Абу-Даби и мечеть Шейха Зайда.',d2:'Сафари, курорты, парки и гастрономия. Люкс, приключения, культура или семья.',visa:'Большинство: виза по прибытии 30-90 дней.',season:'Окт-Апр лучший. Пик Дек-Фев.',tips:'Безопасно. Английский. Скромная одежда.'},cities:[{n:'Dubai',s:'City of superlatives',img:'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600'},{n:'Abu Dhabi',s:'Culture & heritage',img:'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=600'},{n:'Sharjah',s:'Cultural capital',img:'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=600'},{n:'Ras Al Khaimah',s:'Adventure',img:'https://images.unsplash.com/photo-1621953455357-855eb0e5dc23?w=600'}],tours:[{t:'Premium desert safari',d:'6h',img:'https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=600',p:'Dune bashing, camels, BBQ dinner under stars.'},{t:'Burj Khalifa: At the Top',d:'2h',img:'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=600',p:'Skip-the-line levels 124, 125, 148.'},{t:'Abu Dhabi full-day',d:'10h',img:'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=600',p:'Mosque, Louvre, Emirates Palace, Yas.'},{t:'Marina dhow cruise',d:'3h',img:'https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600',p:'Buffet dinner, music, skyline views.'},{t:'Old Dubai walk',d:'4h',img:'https://images.unsplash.com/photo-1548041347-390744c58da0?w=600',p:'Al Fahidi, Gold Souk, Spice Souk, abra.'},{t:'Private luxury yacht',d:'4h',img:'https://images.unsplash.com/photo-1559827291-bce0a768acae?w=600',p:'Burj Al Arab, Palm, Marina.'}],about_img:'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=800',photos:['https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500','https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500','https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=500','https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=500'],usp:[{n:'300+',t:'Hotels at net rates',p:'Direct contracts with all major chains.'},{n:'2h',t:'Max response time',p:'Every request within 2 hours.'},{n:'24/7',t:'On-ground support',p:'Emergency support around the clock.'}]},
+{id:'thailand',n:'Thailand',nr:'Таиланд',flag:'🇹🇭',sub:'Bangkok · Phuket · Koh Samui',img:'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1920',tz:'Asia/Bangkok',cur:'THB',rate:'34.5',wth:'32°C ☀️',cap:'Bangkok',en:{h:'Golden temples, pristine beaches, unforgettable hospitality',d1:'Thailand enchants with temples, beaches, street food and legendary hospitality.',d2:'Thai cuisine, diving, night markets. Budget to luxury.',visa:'Most: 30-60 days visa-free.',season:'Nov-Mar best.',tips:'Modest dress at temples.'},ru:{h:'Золотые храмы, пляжи и гостеприимство',d1:'Таиланд: храмы, пляжи, уличная еда и гостеприимство.',d2:'Кухня, дайвинг, рынки. Любой бюджет.',visa:'Большинство: 30-60 дней без визы.',season:'Ноя-Мар лучший.',tips:'Скромная одежда в храмах.'},cities:[{n:'Bangkok',s:'Vibrant capital',img:'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600'},{n:'Phuket',s:'Island paradise',img:'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=600'},{n:'Chiang Mai',s:'Northern culture',img:'https://images.unsplash.com/photo-1598935898639-81586f7d2129?w=600'},{n:'Koh Samui',s:'Tropical escape',img:'https://images.unsplash.com/photo-1537956965359-7573183d1f57?w=600'}],tours:[{t:'Bangkok temples tour',d:'5h',img:'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600',p:'Grand Palace, Wat Pho, Wat Arun.'},{t:'Phi Phi island',d:'Full day',img:'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600',p:'Maya Bay, snorkeling, beach lunch.'},{t:'Elephant sanctuary',d:'6h',img:'https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=600',p:'Ethical elephant experience.'},{t:'Thai cooking class',d:'4h',img:'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600',p:'Market visit + cooking.'},{t:'Floating markets',d:'5h',img:'https://images.unsplash.com/photo-1541848756149-e3843fcbbde0?w=600',p:'Damnoen Saduak, boat + food.'},{t:'James Bond Island',d:'Full day',img:'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600',p:'Phang Nga Bay, caves, kayaking.'}],about_img:'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800',photos:['https://images.unsplash.com/photo-1528181304800-259b08848526?w=500','https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=500','https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500'],usp:[{n:'200+',t:'Hotels & resorts',p:'Beach resorts to boutique hotels.'},{n:'30+',t:'Tours available',p:'Temples to islands — ready-made.'},{n:'Local',t:'Bangkok team',p:'Thai-speaking support 24/7.'}]},
+{id:'vietnam',n:'Vietnam',nr:'Вьетнам',flag:'🇻🇳',sub:'Hanoi · Ho Chi Minh · Da Nang',img:'https://images.unsplash.com/photo-1528127269322-539801943592?w=1920',tz:'Asia/Ho_Chi_Minh',cur:'VND',rate:'25,450',wth:'30°C 🌤',cap:'Hanoi',en:{h:'Stunning landscapes, heritage, incredible cuisine',d1:'Ha Long Bay karsts, Hoi An streets, buzzing cities. Exceptional value.',d2:'Culinary journeys, beach escapes, cultural immersion.',visa:'E-visa 30 days for most.',season:'Oct-Apr best.',tips:'Motorbike traffic intense. Coffee is must.'},ru:{h:'Пейзажи, наследие и невероятная кухня',d1:'Ха Лонг, Хойан, живые города. Отличная цена-качество.',d2:'Гастро-туры, пляжи, культура.',visa:'Э-виза 30 дней.',season:'Окт-Апр лучший.',tips:'Трафик. Кофе — must try.'},cities:[{n:'Hanoi',s:'Ancient capital',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600'},{n:'Ho Chi Minh',s:'Dynamic south',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600'},{n:'Da Nang',s:'Beach & culture',img:'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600'},{n:'Hoi An',s:'Lantern city',img:'https://images.unsplash.com/photo-1535581652167-3a26c90bbf86?w=600'}],tours:[{t:'Ha Long Bay cruise',d:'2 days',img:'https://images.unsplash.com/photo-1528127269322-539801943592?w=600',p:'Overnight junk boat, caves, kayaking.'},{t:'Hoi An walking tour',d:'4h',img:'https://images.unsplash.com/photo-1535581652167-3a26c90bbf86?w=600',p:'Ancient town, lanterns, cuisine.'},{t:'Cu Chi Tunnels',d:'5h',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600',p:'Underground wartime tunnels.'},{t:'Mekong Delta',d:'Full day',img:'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600',p:'Floating markets, sampan ride.'},{t:'Street food tour',d:'3h',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600',p:'Pho, banh mi, spring rolls, coffee.'},{t:'Motorbike city tour',d:'4h',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600',p:'Real city from the back of a bike.'}],about_img:'https://images.unsplash.com/photo-1528127269322-539801943592?w=800',photos:['https://images.unsplash.com/photo-1528127269322-539801943592?w=500','https://images.unsplash.com/photo-1535581652167-3a26c90bbf86?w=500'],usp:[{n:'150+',t:'Hotels & resorts',p:'Budget to luxury all regions.'},{n:'25+',t:'Tours catalog',p:'Ha Long to Mekong — all bookable.'},{n:'Local',t:'Support team',p:'Vietnamese team on ground.'}]},
+{id:'china',n:'China',nr:'Китай',flag:'🇨🇳',sub:'Beijing · Shanghai · Guangzhou',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1920',tz:'Asia/Shanghai',cur:'CNY',rate:'7.24',wth:'22°C 🌤',cap:'Beijing',en:{h:'Ancient civilization meets cutting-edge modernity',d1:'5,000 years of history and futuristic innovation. Great Wall, Forbidden City, Shanghai skyline.',d2:'Key market with massive travel demand. Groups, business, premium.',visa:'Visa required. We handle applications.',season:'Apr-May, Sep-Nov best.',tips:'Cash common. VPN needed.'},ru:{h:'Древняя цивилизация и ультрасовременность',d1:'5000 лет истории и инноваций. Великая стена, Запретный город, Шанхай.',d2:'Ключевой рынок. Группы, бизнес, премиум.',visa:'Виза обязательна. Мы оформляем.',season:'Апр-Май, Сен-Ноя.',tips:'Наличные. VPN нужен.'},cities:[{n:'Beijing',s:'Imperial capital',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600'},{n:'Shanghai',s:'Modern metropolis',img:'https://images.unsplash.com/photo-1537519646099-7573183d1f57?w=600'},{n:'Guangzhou',s:'Trade hub',img:'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600'},{n:"Xi'an",s:'Terracotta warriors',img:'https://images.unsplash.com/photo-1529921879218-f99546d03a32?w=600'}],tours:[{t:'Great Wall excursion',d:'8h',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600',p:'Mutianyu section. Cable car.'},{t:'Forbidden City',d:'4h',img:'https://images.unsplash.com/photo-1529921879218-f99546d03a32?w=600',p:'Imperial palace. Expert guide.'},{t:'Shanghai discovery',d:'6h',img:'https://images.unsplash.com/photo-1537519646099-7573183d1f57?w=600',p:'Bund, Yu Garden, Pudong.'},{t:'Terracotta Warriors',d:'Full day',img:'https://images.unsplash.com/photo-1529921879218-f99546d03a32?w=600',p:"Xi'an archaeological site."},{t:'Li River cruise',d:'Full day',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600',p:'Guilin to Yangshuo, karst mountains.'},{t:'Beijing hutong tour',d:'3h',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600',p:'Rickshaw through ancient alleys.'}],about_img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',photos:['https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=500','https://images.unsplash.com/photo-1537519646099-7573183d1f57?w=500'],usp:[{n:'500+',t:'Hotels nationwide',p:'Economy to ultra-luxury.'},{n:'50+',t:'Group programs',p:'High-volume capabilities.'},{n:'CN-EN',t:'Bilingual team',p:'Mandarin + English support.'}]},
+{id:'turkey',n:'Turkey',nr:'Турция',flag:'🇹🇷',sub:'Istanbul · Antalya · Cappadocia',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920',tz:'Europe/Istanbul',cur:'TRY',rate:'38.2',wth:'18°C 🌤',cap:'Ankara',en:{h:'Where East meets West — history, beaches, hospitality',d1:'Ottoman heritage, Mediterranean coast, legendary hospitality. Istanbul to Cappadocia.',d2:'Beach resorts, historical sites, balloons, incredible cuisine.',visa:'E-visa for most. Quick online.',season:'Apr-Jun, Sep-Nov best.',tips:'Haggling at bazaars. Turkish tea everywhere.'},ru:{h:'Где Восток встречает Запад',d1:'Османское наследие, средиземноморье, гостеприимство. Стамбул и Каппадокия.',d2:'Курорты, история, шары, кухня.',visa:'Э-виза. Быстро.',season:'Апр-Июн, Сен-Ноя.',tips:'Торг на базарах. Чай везде.'},cities:[{n:'Istanbul',s:'Two continents',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600'},{n:'Cappadocia',s:'Balloon paradise',img:'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=600'},{n:'Antalya',s:'Riviera coast',img:'https://images.unsplash.com/photo-1593238739364-18cfde865647?w=600'},{n:'Bodrum',s:'Aegean charm',img:'https://images.unsplash.com/photo-1568322503652-3e19a2e0ffa3?w=600'}],tours:[{t:'Istanbul highlights',d:'Full day',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600',p:'Hagia Sophia, Blue Mosque, Grand Bazaar.'},{t:'Cappadocia balloon',d:'2h',img:'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=600',p:'Sunrise balloon over fairy chimneys.'},{t:'Pamukkale',d:'Full day',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600',p:'White terraces, thermal pools.'},{t:'Bosphorus cruise',d:'3h',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600',p:'Sail between Europe and Asia.'},{t:'Ephesus ancient city',d:'5h',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600',p:'Best-preserved Roman city.'},{t:'Turkish cooking class',d:'4h',img:'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600',p:'Kebabs, meze, baklava.'}],about_img:'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=800',photos:['https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=500','https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=500'],usp:[{n:'400+',t:'Hotels & resorts',p:'All-inclusive to boutique.'},{n:'40+',t:'Tours catalog',p:'Balloons to ruins.'},{n:'Local',t:'Istanbul team',p:'Turkish-speaking support.'}]},
+{id:'egypt',n:'Egypt',nr:'Египет',flag:'🇪🇬',sub:'Cairo · Sharm · Hurghada',img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=1920',tz:'Africa/Cairo',cur:'EGP',rate:'50.8',wth:'28°C ☀️',cap:'Cairo',en:{h:'Timeless wonders meet Red Sea paradise',d1:'Pyramids, Nile cruises, world-class diving.',d2:'Sphinx to Sharm reefs — history, adventure, relaxation.',visa:'Visa on arrival for most.',season:'Oct-Apr best.',tips:'Tipping culture. Conservative dress.'},ru:{h:'Вечные чудеса и Красное море',d1:'Пирамиды, круизы по Нилу, дайвинг.',d2:'Сфинкс и рифы Шарма — история и отдых.',visa:'Виза по прибытии.',season:'Окт-Апр.',tips:'Чаевые. Скромная одежда.'},cities:[{n:'Cairo',s:'Pyramids & culture',img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=600'},{n:'Sharm El Sheikh',s:'Diving paradise',img:'https://images.unsplash.com/photo-1548041347-390744c58da0?w=600'},{n:'Hurghada',s:'Red Sea resort',img:'https://images.unsplash.com/photo-1548041347-390744c58da0?w=600'},{n:'Luxor',s:'Valley of Kings',img:'https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=600'}],tours:[{t:'Pyramids & Sphinx',d:'5h',img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=600',p:'Giza Plateau. Expert guide.'},{t:'Nile cruise',d:'3-7 days',img:'https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=600',p:'Luxor to Aswan. Temples, sunsets.'},{t:'Red Sea diving',d:'Full day',img:'https://images.unsplash.com/photo-1548041347-390744c58da0?w=600',p:'World-class coral reefs.'},{t:'Luxor & Valley of Kings',d:'Full day',img:'https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=600',p:'Karnak, Valley of Kings.'},{t:'Desert stargazing',d:'6h',img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=600',p:'Sahara + Bedouin dinner.'},{t:'Cairo food tour',d:'4h',img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=600',p:'Koshary, falafel, local markets.'}],about_img:'https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=800',photos:['https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=500','https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=500'],usp:[{n:'250+',t:'Hotels & resorts',p:'Red Sea to Cairo 5-stars.'},{n:'35+',t:'Tour options',p:'Pyramids to diving.'},{n:'Cairo',t:'Based team',p:'Arabic + English support.'}]},
+{id:'europe',n:'Europe',nr:'Европа',flag:'🇪🇺',sub:'Paris · Rome · Barcelona · Prague',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1920',tz:'Europe/Paris',cur:'EUR',rate:'0.92',wth:'16°C 🌤',cap:'Brussels',en:{h:'Unparalleled diversity of cultures and experiences',d1:'Paris romance, Prague history, Barcelona beaches, Swiss Alps.',d2:'Multi-country packages, city breaks, cultural tours.',visa:'Schengen visa covers 27 countries.',season:'Apr-Oct best. Winter for skiing.',tips:'Euro in most countries.'},ru:{h:'Разнообразие культур и впечатлений',d1:'Романтика Парижа, история Праги, пляжи Барселоны, Альпы.',d2:'Мульти-страновые пакеты, городские туры.',visa:'Шенген — 27 стран.',season:'Апр-Окт. Зима — лыжи.',tips:'Евро в большинстве стран.'},cities:[{n:'Paris',s:'City of light',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600'},{n:'Rome',s:'Eternal city',img:'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600'},{n:'Barcelona',s:'Gaudí & beaches',img:'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600'},{n:'Prague',s:'Bohemian gem',img:'https://images.unsplash.com/photo-1541849546-216549ae216d?w=600'}],tours:[{t:'Paris highlights',d:'Full day',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600',p:'Eiffel Tower, Louvre, Montmartre.'},{t:'Rome ancient tour',d:'6h',img:'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600',p:'Colosseum, Forum, Vatican.'},{t:'Barcelona Gaudí',d:'5h',img:'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600',p:'Sagrada Familia, Park Güell.'},{t:'Swiss Alps',d:'Full day',img:'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600',p:'Jungfrau. Train + cable car.'},{t:'Multi-city tour',d:'7-14 days',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600',p:'Custom 3-5 countries.'},{t:'Christmas markets',d:'3-5 days',img:'https://images.unsplash.com/photo-1541849546-216549ae216d?w=600',p:'Vienna, Prague, Munich.'}],about_img:'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800',photos:['https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=500','https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500','https://images.unsplash.com/photo-1583422409516-2895a77efded?w=500'],usp:[{n:'1000+',t:'Hotels continent-wide',p:'Hostels to palaces.'},{n:'20+',t:'Countries covered',p:'All key destinations.'},{n:'Pan-EU',t:'Partner network',p:'Local partners everywhere.'}]},
+{id:'maldives',n:'Maldives',nr:'Мальдивы',flag:'🇲🇻',sub:'Premium & Luxury',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920',tz:'Indian/Maldives',cur:'MVR',rate:'15.4',wth:'30°C ☀️',cap:'Malé',en:{h:'The ultimate luxury island destination',d1:'Crystal waters, overwater villas, world-class diving. Pinnacle of luxury island travel.',d2:'High-margin product for luxury segment. Exclusive resort packages.',visa:'30-day free visa on arrival.',season:'Nov-Apr best.',tips:'Alcohol only in resorts. USD accepted.'},ru:{h:'Ультимативный люксовый остров',d1:'Кристальные воды, виллы над водой, дайвинг. Вершина люкс-отдыха.',d2:'Высокомаржинальный продукт. Эксклюзивные пакеты.',visa:'30 дней бесплатно по прибытии.',season:'Ноя-Апр.',tips:'Алкоголь в резортах. USD.'},cities:[{n:'North Malé Atoll',s:'Classic resorts',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600'},{n:'South Ari Atoll',s:'Whale sharks',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600'},{n:'Baa Atoll',s:'UNESCO biosphere',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600'},{n:'Raa Atoll',s:'Remote luxury',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600'}],tours:[{t:'Overwater villa stay',d:'3-7 nights',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Luxury bungalow with private pool.'},{t:'Sunset dolphin cruise',d:'2h',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Dolphins at golden hour.'},{t:'Diving adventure',d:'4h',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Coral reefs, manta rays.'},{t:'Sandbank picnic',d:'3h',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Private island. Champagne.'},{t:'Spa retreat',d:'Full day',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Overwater spa pavilion.'},{t:'Honeymoon package',d:'5-7 nights',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',p:'Romance, dining, spa, excursions.'}],about_img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800',photos:['https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500'],usp:[{n:'80+',t:'Luxury resorts',p:'Soneva, One&Only, Waldorf.'},{n:'Premium',t:'Segment focus',p:'Honeymoons, VIP, ultra-luxury.'},{n:'Direct',t:'Resort contracts',p:'Best rates guaranteed.'}]},
+{id:'japan',n:'Japan',nr:'Япония',flag:'🇯🇵',sub:'Tokyo · Kyoto · Osaka',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920',tz:'Asia/Tokyo',cur:'JPY',rate:'151.8',wth:'18°C 🌸',cap:'Tokyo',en:{h:'Ancient tradition meets futuristic innovation',d1:'Cherry blossoms, bullet trains, temples, technology.',d2:'Tokyo neon to Kyoto zen — unique cultural experience.',visa:'Visa-free 90 days for most.',season:'Mar-May (sakura), Oct-Nov best.',tips:'Very safe. No tipping. Cash used.'},ru:{h:'Традиции и футуристические инновации',d1:'Сакура, синкансэн, храмы, технологии.',d2:'Неон Токио и дзен Киото — уникальный опыт.',visa:'Безвиз 90 дней.',season:'Мар-Май (сакура), Окт-Ноя.',tips:'Безопасно. Без чаевых. Наличные.'},cities:[{n:'Tokyo',s:'Neon capital',img:'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600'},{n:'Kyoto',s:'Temple city',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600'},{n:'Osaka',s:'Street food',img:'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=600'},{n:'Hakone',s:'Mt. Fuji views',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600'}],tours:[{t:'Tokyo highlights',d:'Full day',img:'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600',p:'Shibuya, Senso-ji, Akihabara.'},{t:'Kyoto temple trail',d:'Full day',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600',p:'Fushimi Inari, Kinkaku-ji, bamboo.'},{t:'Mount Fuji excursion',d:'Full day',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600',p:'Hakone, Lake Ashi, 5th station.'},{t:'Osaka food tour',d:'4h',img:'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=600',p:'Dotonbori, takoyaki, okonomiyaki.'},{t:'Bullet train experience',d:'Varies',img:'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600',p:'Shinkansen Tokyo-Kyoto-Osaka.'},{t:'Ryokan stay',d:'1 night',img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600',p:'Onsen, tatami, kaiseki dinner.'}],about_img:'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800',photos:['https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500','https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500'],usp:[{n:'300+',t:'Hotels & ryokans',p:'Capsule to luxury ryokans.'},{n:'Rail',t:'Pass expertise',p:'JR Pass specialists.'},{n:'JA-EN',t:'Bilingual team',p:'Japanese + English support.'}]},
+{id:'indonesia',n:'Indonesia',nr:'Индонезия',flag:'🇮🇩',sub:'Bali · Jakarta · Lombok',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920',tz:'Asia/Jakarta',cur:'IDR',rate:'15,900',wth:'29°C 🌤',cap:'Jakarta',en:{h:'Archipelago of wonders — temples to volcanoes',d1:'17,000 islands. Bali temples, rice terraces, Komodo dragons.',d2:'Wellness, surfing, culture, luxury villas. All segments.',visa:'Visa on arrival 30 days.',season:'Apr-Oct best.',tips:'Bargaining common. Modest dress at temples.'},ru:{h:'Архипелаг чудес — от храмов до вулканов',d1:'17 000 островов. Храмы Бали, террасы, драконы Комодо.',d2:'Велнес, сёрфинг, культура, виллы. Все сегменты.',visa:'Виза по прибытии 30 дней.',season:'Апр-Окт.',tips:'Торг. Скромная одежда в храмах.'},cities:[{n:'Bali',s:'Island of gods',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600'},{n:'Jakarta',s:'Capital',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600'},{n:'Lombok',s:'Untouched beauty',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600'},{n:'Komodo',s:'Dragon island',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600'}],tours:[{t:'Bali temple tour',d:'Full day',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Uluwatu, Tanah Lot, Kecak dance.'},{t:'Rice terrace trek',d:'4h',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Tegallalang + coffee tasting.'},{t:'Komodo expedition',d:'2-3 days',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Dragons, Pink Beach, snorkeling.'},{t:'Wellness retreat',d:'3-7 days',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Yoga, spa, meditation.'},{t:'Mt Batur sunrise',d:'6h',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Volcano summit breakfast.'},{t:'Ubud art & culture',d:'5h',img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600',p:'Monkey Forest, galleries, crafts.'}],about_img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800',photos:['https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500'],usp:[{n:'200+',t:'Hotels & villas',p:'Luxury villas to homestays.'},{n:'Bali',t:'Specialist',p:'#1 requested destination.'},{n:'Local',t:'Ground team',p:'Indonesian team on ground.'}]},
+{id:'mauritius',n:'Mauritius',nr:'Маврикий',flag:'🇲🇺',sub:'Premium island escape',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920',tz:'Indian/Mauritius',cur:'MUR',rate:'46.5',wth:'26°C ☀️',cap:'Port Louis',en:{h:'A jewel of the Indian Ocean',d1:'Pristine beaches, lush mountains, world-class resorts. Honeymooners and luxury seekers.',d2:'Underwater waterfall, seven-colored earth. High-margin premium.',visa:'Visa-free 60-90 days.',season:'May-Dec best.',tips:'English + French. Rum tastings.'},ru:{h:'Жемчужина Индийского океана',d1:'Пляжи, горы, курорты. Для свадебных путешествий и люкса.',d2:'Подводный водопад, семицветная земля. Премиум.',visa:'Безвиз 60-90 дней.',season:'Май-Дек.',tips:'Английский + французский. Ром.'},cities:[{n:'Port Louis',s:'Vibrant capital',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600'},{n:'Grand Baie',s:'Beach paradise',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600'},{n:'Le Morne',s:'UNESCO heritage',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600'},{n:'Chamarel',s:'Seven colors',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600'}],tours:[{t:'Catamaran cruise',d:'Full day',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'Ile aux Cerfs, snorkeling, BBQ.'},{t:'Chamarel nature',d:'5h',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'Seven-colored earth, waterfall, rum.'},{t:'Underwater sea walk',d:'2h',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'Walk on ocean floor.'},{t:'Helicopter tour',d:'1h',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'Underwater waterfall aerial view.'},{t:'Honeymoon package',d:'5-7 nights',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'5-star, spa, private dinner.'},{t:'Eco-nature hike',d:'4h',img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600',p:'Black River Gorges, endemic birds.'}],about_img:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800',photos:['https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=500'],usp:[{n:'60+',t:'Luxury resorts',p:'Beachcomber, Constance, LUX*.'},{n:'Premium',t:'Segment focus',p:'Honeymoons, high-margin.'},{n:'Direct',t:'Contracts',p:'Best rates from resorts.'}]}
+];
+
+function partnerForm(){
+var E=LANG==='ru';
+return '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Партнёрство':'Partnership')+'</div><h2 class="stitle">'+(E?'Станьте партнёром Desera':'Become a Desera partner')+'</h2><p class="sdesc">'+(E?'Заполните форму — мы ответим в течение 2 часов.':'Fill out the form — we respond within 2 hours.')+'</p></div><div class="form-box"><div class="form-row"><div class="form-field"><label>'+(E?'Имя *':'First name *')+'</label><input type="text" placeholder="John"></div><div class="form-field"><label>'+(E?'Фамилия *':'Last name *')+'</label><input type="text" placeholder="Smith"></div></div><div class="form-row"><div class="form-field"><label>'+(E?'Компания *':'Company *')+'</label><input type="text" placeholder="Your Travel Agency"></div><div class="form-field"><label>'+(E?'Тип компании *':'Type *')+'</label><select><option>'+(E?'Турагентство':'Travel Agency')+'</option><option>'+(E?'Туроператор':'Tour Operator')+'</option><option>DMC</option><option>OTA</option><option>'+(E?'Корпоративный':'Corporate')+'</option></select></div></div><div class="form-row"><div class="form-field"><label>Email *</label><input type="email" placeholder="john@company.com"></div><div class="form-field"><label>'+(E?'Телефон *':'Phone *')+'</label><input type="tel" placeholder="+971 50 000 0000"></div></div><div class="form-row"><div class="form-field"><label>'+(E?'Страна *':'Country *')+'</label><input type="text" placeholder="UAE"></div><div class="form-field"><label>'+(E?'Сайт':'Website')+'</label><input type="url" placeholder="https://company.com"></div></div><p style="font-size:13px;font-weight:600;color:var(--dk);margin-bottom:12px">'+(E?'ИНТЕРЕСУЮЩИЕ НАПРАВЛЕНИЯ':'DESTINATIONS OF INTEREST')+'</p><div class="checks-grid">'+COUNTRIES.map(function(c){return '<label class="check-item"><input type="checkbox"> '+c.flag+' '+c.n+'</label>';}).join('')+'</div><div class="form-row"><div class="form-field full"><label>'+(E?'Сообщение':'Message')+'</label><textarea placeholder="'+(E?'Расскажите о вашем бизнесе...':'Tell us about your business...')+'"></textarea></div></div><div style="text-align:center;margin-top:24px"><button class="bp" onclick="alert(\''+(E?'Спасибо! Мы свяжемся в течение 2 часов.':'Thank you! We will contact you within 2 hours.')+'\')">'+(E?'Отправить заявку →':'Submit application →')+'</button><p style="font-size:13px;color:var(--g500);margin-top:12px">'+(E?'Обычно отвечаем в течение 2 часов':'We respond within 2 business hours')+'</p></div></div></div></section>';
+}
+
+function renderCountry(c){
+var L=c[LANG];
+var E=LANG==='ru';
+var products=[{ic:'🏨',bg:'var(--c1l)',t:E?'Отели':'Hotels',p:E?'Широкий выбор по конкурентным нетто.':'Wide selection at competitive net rates.'},{ic:'🚗',bg:'var(--c2l)',t:E?'Трансферы':'Transfers',p:E?'Аэропорт, межгород, частный водитель.':'Airport, intercity, private chauffeur.'},{ic:'🎫',bg:'var(--c3l)',t:E?'Билеты':'Tickets',p:E?'Аттракции, парки, музеи по нетто.':'Attractions, parks, museums at net rates.'},{ic:'🏜️',bg:'var(--gdl)',t:E?'Экскурсии':'Excursions',p:E?'Гиды, культура, приключения.':'Guided tours, culture, adventure.'},{ic:'🛥️',bg:'#F3E8FF',t:E?'Премиум и VIP':'Premium & VIP',p:E?'Яхты, вертолёты, эксклюзив.':'Yachts, helicopters, exclusive.'},{ic:'📦',bg:'#FFF1F0',t:E?'Пакеты':'Packages',p:E?'Готовые и кастомные.':'Ready-made and customizable.'}];
+var cName=E?c.nr:c.n;
+return '<section class="d-hero"><div class="d-hero-bg" style="background-image:url(\''+c.img+'\')"></div><div class="d-hero-c"><div style="font-size:56px;margin-bottom:8px">'+c.flag+'</div><h1>'+cName+'</h1><p>'+L.h+'</p></div></section>'+
+'<div class="live"><div class="live-i"><div class="live-item"><div class="live-dot"></div>'+(E?'Местное время':'Local time')+': <span class="val" id="ct">--:--</span></div><div class="live-item">🌡 '+c.wth+'</div><div class="live-item">💱 1 USD = <span class="val">'+c.rate+' '+c.cur+'</span></div><div class="live-item">🏛 '+(E?'Столица':'Capital')+': <span class="val">'+c.cap+'</span></div></div></div>'+
+'<section class="d-about"><div class="con"><div class="d-about-txt"><div class="stag">'+(E?'Откройте '+cName:'Discover '+c.n)+'</div><h2>'+(E?'Ваш DMC-партнёр по '+cName:'Your DMC partner for '+c.n)+'</h2><p>'+L.d1+'</p><p>'+L.d2+'</p></div><div class="d-about-img"><img src="'+c.about_img+'" alt="'+c.n+'"></div></div></section>'+
+'<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Ключевые города':'Key destinations')+'</div><h2 class="stitle">'+(E?'Исследуйте '+cName:'Explore '+c.n)+'</h2></div><div class="cities-grid">'+c.cities.map(function(ci){return '<div class="city-card"><img src="'+ci.img+'" alt="'+ci.n+'"><div class="city-ov"><div class="city-n">'+ci.n+'</div><div class="city-s">'+ci.s+'</div></div></div>';}).join('')+'</div></div></section>'+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Портфель продуктов':'Product portfolio')+'</div><h2 class="stitle">'+(E?'Что продавать в '+cName:'What you can sell in '+c.n)+'</h2></div><div class="prod-grid">'+products.map(function(p){return '<div class="prod"><div class="prod-ic" style="background:'+p.bg+'">'+p.ic+'</div><div class="prod-t">'+p.t+'</div><p class="prod-p">'+p.p+'</p></div>';}).join('')+'</div></div></section>'+
+'<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Популярные туры':'Popular tours')+'</div><h2 class="stitle">'+(E?'Бестселлеры '+cName:'Bestselling '+c.n+' experiences')+'</h2></div><div class="tour-grid">'+c.tours.map(function(t){return '<div class="tour"><div class="tour-img"><img src="'+t.img+'" alt="'+t.t+'"><div class="tour-dur">'+t.d+'</div></div><div class="tour-b"><div class="tour-t">'+(E&&t.tr?t.tr:t.t)+'</div><p class="tour-p">'+(E&&t.pr?t.pr:t.p)+'</p></div></div>';}).join('')+'</div></div></section>'+
+'<section style="padding:40px 0"><div style="max-width:var(--mx);margin:0 auto"><div class="photo-strip">'+c.photos.map(function(p){return '<img src="'+p+'" alt="'+c.n+'">';}).join('')+'</div></div></section>'+
+'<section class="usp"><div class="usp-c"><div class="usp-h"><div class="stag" style="color:var(--c1)">'+(E?'Преимущества партнёра':'Partner advantages')+'</div><h2>'+(E?'Почему '+cName+' через Desera':'Why sell '+c.n+' through Desera')+'</h2></div><div class="usp-grid">'+c.usp.map(function(u){return '<div class="usp-card"><div class="usp-num">'+u.n+'</div><div class="usp-t">'+u.t+'</div><p class="usp-p">'+u.p+'</p></div>';}).join('')+'</div><div style="text-align:center;margin-top:40px"><button class="bp" onclick="go(\'partner\')" style="background:#fff;color:var(--dk)">'+(E?'Начните продавать '+cName+' →':'Start selling '+c.n+' today →')+'</button></div></div></section>'+
+'<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Для агента':'Agent toolkit')+'</div><h2 class="stitle">'+(E?'Важное о '+cName:'Essential '+c.n+' info')+'</h2></div><div class="info-grid"><div class="info-card"><div class="info-ic">🛂</div><div class="info-t">'+(E?'Виза':'Visa')+'</div><div class="info-v">'+L.visa+'</div></div><div class="info-card"><div class="info-ic">☀️</div><div class="info-t">'+(E?'Сезон':'Best season')+'</div><div class="info-v">'+L.season+'</div></div><div class="info-card"><div class="info-ic">⏰</div><div class="info-t">'+(E?'Часовой пояс':'Time zone')+'</div><div class="info-v">'+c.tz+'</div></div><div class="info-card"><div class="info-ic">💡</div><div class="info-t">'+(E?'Советы':'Tips')+'</div><div class="info-v">'+L.tips+'</div></div></div></div></section>'+
+'<div class="trust"><div class="trust-i"><div class="ti"><div class="ti-ic" style="background:var(--c1l)">🌍</div><span>'+(E?'11+ направлений':'11+ destinations')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--c2l)">🤝</div><span>'+(E?'Прямые контракты':'Direct contracts')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--c3l)">⚡</div><span>'+(E?'B2B-платформа и API':'B2B platform & API')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--gdl)">🏆</div><span>'+(E?'От массового до luxury':'Mass to luxury')+'</span></div></div></div>'+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Почему мы':'Why partner with us')+'</div><h2 class="stitle">'+(E?'Всё, что нужно вашему агентству':'Everything your agency needs')+'</h2></div><div class="pgrid"><div class="pc"><div class="pc-ic" style="background:var(--c1l)">🌏</div><div class="pt">'+(E?'Глобальное покрытие':'Global coverage')+'</div><p class="pp">'+(E?'11+ направлений через одну точку входа.':'11+ destinations through one contact.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--c2l)">💰</div><div class="pt">'+(E?'Конкурентные тарифы':'Competitive rates')+'</div><p class="pp">'+(E?'Прямые контракты. Лучшие нетто.':'Direct contracts. Best net rates.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--gdl)">✨</div><div class="pt">'+(E?'Индивидуальный подход':'Tailored experiences')+'</div><p class="pp">'+(E?'Каждый запрос — уникальный проект.':'Every request is a unique project.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--c3l)">🖥️</div><div class="pt">'+(E?'Платформа и API':'B2B platform & API')+'</div><p class="pp">'+(E?'Бронирование онлайн, дашборд.':'Real-time booking, dashboard.')+'</p></div></div><div style="text-align:center;margin-top:56px"><button class="bp" style="padding:20px 40px;font-size:17px;background:linear-gradient(135deg,var(--c1),#E87B4C);box-shadow:0 8px 32px rgba(232,96,76,.25)" onclick="go(\'partner\')">'+(E?'Готовы начать? Давайте обсудим →':'Ready to start? Let\'s talk →')+'</button></div></div></section>'+
+'<section class="sec" id="dest" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Направления':'Destinations')+'</div><h2 class="stitle">'+(E?'Куда мы отправляем ваших клиентов':'Where we take your clients')+'</h2></div><div class="dgrid">'+COUNTRIES.map(function(c,i){return '<div class="dc'+(i===0?' " ':' "')+'onclick="go(\''+c.id+'\')" style="cursor:pointer;background-image:url(\''+c.img+'\');background-size:cover;background-position:center"><div class="dc-ov"><div class="dc-fl">'+c.flag+'</div><div class="dc-n">'+(E?c.nr:c.n)+'</div><div class="dc-s">'+c.sub+'</div></div></div>';}).join('')+'<div style="grid-column:span 2;border-radius:20px;background:linear-gradient(135deg,var(--c1),#E87B4C);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:all .4s;position:relative;overflow:hidden" onclick="go(\'partner\')" onmouseover="this.style.transform=\'translateY(-4px)\'" onmouseout="this.style.transform=\'none\'"><div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1)"></div><div style="position:absolute;bottom:-40px;right:60px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.06)"></div><div style="position:relative;z-index:2"><div style="font-size:32px;margin-bottom:16px">✈️</div><div style="font-family:var(--fd);font-size:28px;color:#fff;margin-bottom:8px">'+(E?'Нужно другое направление?':'Need a different destination?')+'</div><div style="font-size:15px;color:rgba(255,255,255,.8);margin-bottom:20px;font-weight:300;max-width:360px">'+(E?'Мы работаем с любыми запросами. Расскажите нам — мы найдём решение.':'We handle any request. Tell us what you need — we\'ll find a solution.')+'</div><div style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#fff;color:var(--c1);border-radius:100px;font-size:14px;font-weight:600">'+(E?'Отправить запрос →':'Send a request →')+'</div></div></div>'+'</div></div></section>'+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Услуги':'Services')+'</div><h2 class="stitle">'+(E?'Всё для ваших клиентов':'Everything your clients need')+'</h2></div><div class="sgrid"><div class="sv"><div class="sv-img"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600"></div><div class="sv-b"><div class="sv-t">'+(E?'Турпакеты':'Travel packages')+'</div><p class="sv-p">'+(E?'Мульти-направленные, кастомизируемые пакеты.':'Multi-destination, customizable packages.')+'</p></div></div><div class="sv"><div class="sv-img"><img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600"></div><div class="sv-b"><div class="sv-t">'+(E?'Экскурсии и туры':'Excursions & tours')+'</div><p class="sv-p">'+(E?'От прогулок до экспедиций.':'City walks to expeditions.')+'</p></div></div><div class="sv"><div class="sv-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600"></div><div class="sv-b"><div class="sv-t">'+(E?'Премиум-опыт':'Premium experiences')+'</div><p class="sv-p">'+(E?'Яхты, вертолёты, VIP.':'Yachts, helicopters, VIP.')+'</p></div></div></div></div></section>'+
+'<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Отзывы партнёров':'Partner testimonials')+'</div><h2 class="stitle">'+(E?'Что говорят наши партнёры':'What our partners say')+'</h2></div>'+testimonials()+'</div></section>'+
+trustBadges()+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Сезонный календарь':'Seasonal calendar')+'</div><h2 class="stitle">'+(E?'Когда лучше ехать':'Best time to travel')+'</h2></div>'+seasonCalendar()+'</div></section>'+
+partnerForm();
+}
+
+
+
+function renderHome(){
+var E=LANG==='ru';
+var heroCards=COUNTRIES.concat(COUNTRIES).map(function(c){return '<div class="hero-card" onclick="go(\''+c.id+'\')"><img class="hero-card-img" src="'+c.img.replace('w=1920','w=400')+'" alt="'+c.n+'"><div class="hero-card-info"><div class="hero-card-flag">'+c.flag+'</div><div class="hero-card-name">'+(E?c.nr:c.n)+'</div><div class="hero-card-sub">'+c.sub+'</div></div></div>';}).join('');
+return '<section class="hero"><div class="hero-bg" id="hero-bg" style="background-image:url(\'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920\')"></div><div class="hero-c"><div style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;margin-bottom:32px"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.8)">'+(E?'Глобальная DMC-компания':'Global DMC Partner')+'</span></div><h1>'+(E?'Исключительные travel-продукты в <em>11+ направлениях</em> мира':'Extraordinary travel experiences across <em>11+ destinations</em>')+'</h1><p class="hero-sub">'+(E?'Мы создаём, пакетируем и дистрибутируем travel-продукты по всему миру. Ваш надёжный DMC-партнёр от Дубая до Токио.':'We structure, package and distribute curated travel experiences worldwide. Your trusted DMC partner from Dubai to Tokyo.')+'</p><div class="hero-act"><a class="bp" onclick="go(\'partner\')">'+(E?'Стать партнёром →':'Become a partner →')+'</a><a class="bs" onclick="document.getElementById(\'dest\').scrollIntoView({behavior:\'smooth\'})" style="color:#fff">'+(E?'Направления':'Explore destinations')+'</a></div><div class="hero-dots"><div class="hero-dot active" onclick="heroBg(0)"></div><div class="hero-dot" onclick="heroBg(1)"></div><div class="hero-dot" onclick="heroBg(2)"></div><div class="hero-dot" onclick="heroBg(3)"></div><div class="hero-dot" onclick="heroBg(4)"></div></div></div></section>'+
+'<div class="trust"><div class="trust-i"><div class="ti"><div class="ti-ic" style="background:var(--c1l)">🌍</div><span>'+(E?'11+ направлений':'11+ destinations')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--c2l)">🤝</div><span>'+(E?'Прямые контракты':'Direct contracts')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--c3l)">⚡</div><span>'+(E?'B2B-платформа':'B2B platform & API')+'</span></div><div class="ti"><div class="ti-ic" style="background:var(--gdl)">🏆</div><span>'+(E?'От массового до luxury':'Mass to luxury')+'</span></div></div></div>'+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Почему мы':'Why partner with us')+'</div><h2 class="stitle">'+(E?'Всё, что нужно вашему агентству':'Everything your agency needs')+'</h2></div><div class="pgrid"><div class="pc"><div class="pc-ic" style="background:var(--c1l)">🌏</div><div class="pt">'+(E?'Глобальное покрытие':'Global coverage')+'</div><p class="pp">'+(E?'11+ направлений через одну точку.':'11+ destinations through one contact.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--c2l)">💰</div><div class="pt">'+(E?'Конкурентные тарифы':'Competitive rates')+'</div><p class="pp">'+(E?'Прямые контракты. Лучшие нетто.':'Direct contracts. Best net rates.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--gdl)">✨</div><div class="pt">'+(E?'Индивидуальный подход':'Tailored experiences')+'</div><p class="pp">'+(E?'Каждый запрос — проект.':'Every request is a unique project.')+'</p></div><div class="pc"><div class="pc-ic" style="background:var(--c3l)">🖥️</div><div class="pt">'+(E?'Платформа и API':'B2B platform & API')+'</div><p class="pp">'+(E?'Бронирование онлайн, дашборд.':'Real-time booking, dashboard.')+'</p></div></div><div style="text-align:center;margin-top:56px"><button class="bp" style="padding:20px 40px;font-size:17px;background:linear-gradient(135deg,var(--c1),#E87B4C);box-shadow:0 8px 32px rgba(232,96,76,.25)" onclick="go(\'partner\')">'+(E?'Готовы начать? →':'Ready to start? Let\'s talk →')+'</button></div></div></section>'+
+'<section class="sec" id="dest" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Направления':'Destinations')+'</div><h2 class="stitle">'+(E?'Куда мы отправляем ваших клиентов':'Where we take your clients')+'</h2></div><div class="dgrid">'+COUNTRIES.map(function(c,i){return '<div class="dc" onclick="go(\''+c.id+'\')" style="cursor:pointer;background-image:url(\''+c.img+'\');background-size:cover;background-position:center"><div class="dc-ov"><div class="dc-fl">'+c.flag+'</div><div class="dc-n">'+(E?c.nr:c.n)+'</div><div class="dc-s">'+c.sub+'</div></div></div>';}).join('')+'<div style="grid-column:span 2;border-radius:20px;background:linear-gradient(135deg,var(--c1),#E87B4C);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:all .4s;position:relative;overflow:hidden" onclick="go(\'partner\')" onmouseover="this.style.transform=\'translateY(-4px)\'" onmouseout="this.style.transform=\'none\'"><div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1)"></div><div style="position:absolute;bottom:-40px;right:60px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.06)"></div><div style="position:relative;z-index:2"><div style="font-size:32px;margin-bottom:16px">✈️</div><div style="font-family:var(--fd);font-size:28px;color:#fff;margin-bottom:8px">'+(E?'Нужно другое направление?':'Need a different destination?')+'</div><div style="font-size:15px;color:rgba(255,255,255,.8);margin-bottom:20px;font-weight:300;max-width:360px">'+(E?'Мы работаем с любыми запросами. Расскажите нам — мы найдём решение.':'We handle any request. Tell us what you need — we\'ll find a solution.')+'</div><div style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#fff;color:var(--c1);border-radius:100px;font-size:14px;font-weight:600">'+(E?'Отправить запрос →':'Send a request →')+'</div></div></div>'+'</div></div></section>'+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Что вы можете продавать':'What you can sell')+'</div><h2 class="stitle">'+(E?'Полный портфель travel-продуктов':'Complete travel product portfolio')+'</h2><p class="sdesc">'+(E?'Всё необходимое для продажи 11+ направлений — через одну платформу':'Everything you need to sell 11+ destinations — through one platform')+'</p></div>'+
+'<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px" id="svc-tabs">'+
+'<button onclick="svcTab(0)" class="svc-tab active" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--dk)">'+(E?'🏨 Отели':'🏨 Hotels')+'</button>'+
+'<button onclick="svcTab(1)" class="svc-tab" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--g500)">'+(E?'🏜️ Экскурсии':'🏜️ Excursions')+'</button>'+
+'<button onclick="svcTab(2)" class="svc-tab" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--g500)">'+(E?'🚗 Трансферы':'🚗 Transfers')+'</button>'+
+'<button onclick="svcTab(3)" class="svc-tab" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--g500)">'+(E?'🎫 Билеты':'🎫 Tickets')+'</button>'+
+'<button onclick="svcTab(4)" class="svc-tab" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--g500)">'+(E?'🛥️ Премиум':'🛥️ Premium')+'</button>'+
+'<button onclick="svcTab(5)" class="svc-tab" style="padding:10px 22px;border-radius:100px;border:1px solid var(--g200);background:transparent;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s;color:var(--g500)">'+(E?'📦 Пакеты':'📦 Packages')+'</button>'+
+'</div>'+
+'<div id="svc-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--g200);border-radius:24px;overflow:hidden;min-height:360px">'+
+'<div id="svc-img" style="height:100%;min-height:360px;background:url(https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800) center/cover"></div>'+
+'<div style="padding:40px 40px 40px 0" id="svc-content">'+
+'<div style="font-family:var(--fd);font-size:48px;color:var(--c1);margin-bottom:8px" id="svc-num">500+</div>'+
+'<div style="font-family:var(--fd);font-size:24px;color:var(--dk);margin-bottom:16px" id="svc-title">'+(E?'Отелей по всему миру':'Hotels worldwide')+'</div>'+
+'<div style="font-size:15px;line-height:1.8;color:var(--g500);font-weight:300;margin-bottom:24px" id="svc-desc">'+(E?'От бюджетных гостиниц до ультра-люкс резортов. Прямые контракты с Marriott, Hilton, Accor, IHG и сотнями независимых отелей. Конкурентные нетто-тарифы с моментальным подтверждением через нашу B2B-платформу.':'From budget hotels to ultra-luxury resorts. Direct contracts with Marriott, Hilton, Accor, IHG and hundreds of independent hotels. Competitive net rates with instant confirmation via our B2B platform.')+'</div>'+
+'<div style="display:flex;gap:24px;margin-bottom:24px" id="svc-features">'+
+'<div style="font-size:13px;color:var(--g700)"><span style="color:var(--c1);font-weight:700">✓</span> '+(E?'Нетто-тарифы':'Net rates')+'</div>'+
+'<div style="font-size:13px;color:var(--g700)"><span style="color:var(--c1);font-weight:700">✓</span> '+(E?'Моментальное подтверждение':'Instant confirmation')+'</div>'+
+'<div style="font-size:13px;color:var(--g700)"><span style="color:var(--c1);font-weight:700">✓</span> '+(E?'11+ направлений':'11+ destinations')+'</div>'+
+'</div>'+
+'<button class="bp" onclick="go(\'partner\')" style="font-size:14px;padding:12px 28px">'+(E?'Запросить тарифы →':'Request rates →')+'</button>'+
+'</div></div>'+
+'</div></section>'+
+'<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Отзывы':'Testimonials')+'</div><h2 class="stitle">'+(E?'Что говорят партнёры':'What partners say')+'</h2></div>'+testimonials()+'</div></section>'+
+trustBadges()+
+'<section class="sec"><div class="con"><div class="sh"><div class="stag">'+(E?'Сезонный календарь':'Seasonal calendar')+'</div><h2 class="stitle">'+(E?'Когда лучше ехать':'Best time to travel')+'</h2></div>'+seasonCalendar()+'</div></section>'+
+partnerForm();
+}
+
+function go(p){
+CUR_PAGE=p;
+var c=COUNTRIES.find(function(x){return x.id===p;});
+if(c){
+document.getElementById('app').innerHTML=renderCountry(c);
+window.scrollTo(0,0);
+document.getElementById('nb').className='dk';
+startClock(c.tz);
+updateNavLang();
+return;
+}
+if(p==='partner'){
+var E=LANG==='ru';
+document.getElementById('app').innerHTML='<div style="padding:140px 0 0;background:linear-gradient(135deg,var(--dk),#1f2937);text-align:center"><div class="con"><div class="stag" style="color:var(--c1)">'+(E?'Партнёрство':'Partnership')+'</div><h1 style="font-family:var(--fd);font-size:clamp(36px,5vw,52px);color:#fff;margin-bottom:16px">'+(E?'Станьте партнёром Desera':'Become a Desera partner')+'</h1><p style="font-size:18px;color:rgba(255,255,255,.6);font-weight:300;max-width:560px;margin:0 auto">'+(E?'Заполните форму — ответим в течение 2 часов.':'Fill out the form — we respond within 2 hours.')+'</p></div></div>'+partnerForm();
+window.scrollTo(0,0);
+document.getElementById('nb').className='dk';
+updateNavLang();
+return;
+}
+document.getElementById('app').innerHTML=renderHome();
+window.scrollTo(0,0);
+document.getElementById('nb').className='dk';
+updateNavLang();
+}
+
+function setLang(l){
+LANG=l;
+document.getElementById('lb-en').style.cssText=l==='en'?'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)':'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)';
+document.getElementById('lb-ru').style.cssText=l==='ru'?'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)':'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)';
+go(CUR_PAGE);
+}
+
+function updateNavLang(){
+var E=LANG==='ru';
+var cta=document.querySelector('.nav-cta');
+if(cta)cta.textContent=E?'Стать партнёром':'Become a partner';
+var links=document.querySelectorAll('.nl > a');
+if(links[0])links[0].textContent=E?'Главная':'Home';
+if(links[1])links[1].textContent=E?'Услуги':'Services';
+if(links[2])links[2].textContent=E?'Контакты':'Contact';
+var ddSpan=document.querySelector('.dd-wrap > span');
+if(ddSpan){ddSpan.innerHTML=(E?'Направления':'Destinations')+' <span style="font-size:10px">▾</span>';}
+}
+
+var currentTZ='UTC';
+function startClock(tz){currentTZ=tz;tick();}
+function tick(){
+var el=document.getElementById('ct');
+if(!el)return;
+try{
+var now=new Date();
+var s=now.toLocaleString('en-US',{timeZone:currentTZ,hour:'2-digit',minute:'2-digit',hour12:false});
+el.textContent=s;
+}catch(e){el.textContent='--:--';}
+}
+setInterval(tick,30000);
+
+// DARK MODE
+function toggleDark(){document.body.classList.toggle('dark');document.getElementById('dm-btn').textContent=document.body.classList.contains('dark')?'🌙':'☀️';}
+
+// BACK TO TOP
+window.addEventListener('scroll',function(){var b=document.getElementById('btt');if(b)b.classList.toggle('show',window.scrollY>400);});
+
+// SCROLL ANIMATIONS
+function initAnim(){try{var els=document.querySelectorAll('.anim:not(.in)');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');}});},{threshold:0.1});els.forEach(function(el){obs.observe(el);});}catch(e){document.querySelectorAll('.anim').forEach(function(el){el.classList.add('in');});}}
+
+// COUNTER ANIMATION  
+function animateCounters(){document.querySelectorAll('.counter').forEach(function(el){var target=parseInt(el.getAttribute('data-target'));var suffix=el.getAttribute('data-suffix')||'';var duration=1500;var startTime=null;function step(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor(progress*target)+suffix;if(progress<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+
+// PAGE TRANSITION
+var _origGo=go;
+go=function(p){var app=document.getElementById('app');app.style.opacity='0';setTimeout(function(){_origGo(p);app.style.opacity='1';setTimeout(function(){initAnim();animateCounters();},200);},200);};
+
+// TRIP BUILDER
+var tbCur=1,tbData={};
+function tripBuilder(){var E=LANG==='ru';return '<section class="sec"><div class="con"><div class="tb"><div class="tb-inner"><h3>'+(E?'Конструктор запроса':'Trip Builder')+'</h3><p style="color:rgba(255,255,255,.5);margin-bottom:32px">'+(E?'Соберите запрос за 4 шага':'Build your request in 4 steps')+'</p><div class="tb-steps"><div class="tb-step active" onclick="tbStep(1)"><div class="tb-step-n">'+(E?'Шаг 1':'Step 1')+'</div><div class="tb-step-t">'+(E?'Куда':'Where')+'</div></div><div class="tb-step" onclick="tbStep(2)"><div class="tb-step-n">'+(E?'Шаг 2':'Step 2')+'</div><div class="tb-step-t">'+(E?'Когда':'When')+'</div></div><div class="tb-step" onclick="tbStep(3)"><div class="tb-step-n">'+(E?'Шаг 3':'Step 3')+'</div><div class="tb-step-t">'+(E?'Что':'What')+'</div></div><div class="tb-step" onclick="tbStep(4)"><div class="tb-step-n">'+(E?'Шаг 4':'Step 4')+'</div><div class="tb-step-t">'+(E?'Контакт':'Contact')+'</div></div></div><div id="tb-panel"><div class="tb-opts">'+COUNTRIES.map(function(c){return '<div class="tb-opt" onclick="tbSel(this)">'+c.flag+' '+c.n+'</div>';}).join('')+'</div></div><div style="margin-top:24px;text-align:right"><button class="bp" onclick="tbNext()">'+(E?'Далее →':'Next →')+'</button></div></div></div></div></section>';}
+function tbStep(n){tbCur=n;document.querySelectorAll('.tb-step').forEach(function(s,i){s.classList.toggle('active',i===n-1);});var E=LANG==='ru';var p=document.getElementById('tb-panel');if(n===1)p.innerHTML='<div class="tb-opts">'+COUNTRIES.map(function(c){return '<div class="tb-opt" onclick="tbSel(this)">'+c.flag+' '+c.n+'</div>';}).join('')+'</div>';else if(n===2)p.innerHTML='<div class="tb-row"><input class="tb-input" type="date"><input class="tb-input" type="number" placeholder="'+(E?'Гостей':'Guests')+'" min="1"></div><div class="tb-row"><input class="tb-input" type="number" placeholder="'+(E?'Ночей':'Nights')+'" min="1"><select class="tb-input"><option>'+(E?'Стандарт':'Standard')+'</option><option>'+(E?'Премиум':'Premium')+'</option><option>'+(E?'Люкс':'Luxury')+'</option></select></div>';else if(n===3){var svcs=[E?'Отели':'Hotels',E?'Трансферы':'Transfers',E?'Экскурсии':'Excursions',E?'Билеты':'Tickets',E?'Премиум':'Premium',E?'Всё включено':'All inclusive'];p.innerHTML='<div class="tb-opts">'+svcs.map(function(s){return '<div class="tb-opt" onclick="tbSel(this)">'+s+'</div>';}).join('')+'</div>';}else p.innerHTML='<div class="tb-row"><input class="tb-input" placeholder="'+(E?'Имя':'Name')+'"><input class="tb-input" placeholder="Email" type="email"></div><div class="tb-row"><input class="tb-input" placeholder="'+(E?'Телефон':'Phone')+'" type="tel"><input class="tb-input" placeholder="'+(E?'Компания':'Company')+'"></div>';}
+function tbSel(el){el.classList.toggle('sel');}
+function tbNext(){if(tbCur<4)tbStep(tbCur+1);else alert(LANG==='ru'?'Спасибо! Предложение в течение 2 часов.':'Thank you! Proposal within 2 hours.');}
+
+// SEASONAL CALENDAR
+function seasonCalendar(){var E=LANG==='ru';var mo=E?['Я','Ф','М','А','М','И','И','А','С','О','Н','Д']:['J','F','M','A','M','J','J','A','S','O','N','D'];var data=[{n:'UAE',m:[1,1,1,2,3,3,3,3,3,2,1,1]},{n:E?'Таиланд':'Thailand',m:[1,1,1,2,2,3,3,3,3,2,1,1]},{n:E?'Вьетнам':'Vietnam',m:[1,1,1,2,2,3,3,3,3,1,1,1]},{n:E?'Китай':'China',m:[2,2,1,1,1,2,3,3,1,1,1,2]},{n:E?'Турция':'Turkey',m:[2,2,2,1,1,1,2,2,1,1,2,2]},{n:E?'Египет':'Egypt',m:[1,1,1,2,2,3,3,3,2,1,1,1]},{n:E?'Европа':'Europe',m:[2,2,2,1,1,1,1,2,1,1,2,2]},{n:E?'Мальдивы':'Maldives',m:[1,1,1,1,2,3,3,3,2,2,1,1]},{n:E?'Япония':'Japan',m:[2,2,1,1,1,2,2,3,2,1,1,2]},{n:E?'Индонезия':'Indonesia',m:[3,3,3,1,1,1,1,1,1,1,2,3]},{n:E?'Маврикий':'Mauritius',m:[3,3,3,2,1,1,1,1,1,1,2,2]}];var cls=['','cal-best','cal-good','cal-ok'];var html='<div class="cal-grid"><div class="cal-h"></div>'+mo.map(function(m){return '<div class="cal-h">'+m+'</div>';}).join('');data.forEach(function(r){html+='<div class="cal-c">'+r.n+'</div>'+r.m.map(function(v){return '<div class="cal-cell '+cls[v]+'">'+(v===1?'●':v===2?'◐':'○')+'</div>';}).join('');});return html+'</div><div style="display:flex;gap:16px;margin-top:12px;font-size:12px;color:var(--g500)"><span><span class="cal-cell cal-best" style="display:inline-block;width:16px;text-align:center;font-size:10px">●</span> '+(E?'Лучший':'Best')+'</span><span><span class="cal-cell cal-good" style="display:inline-block;width:16px;text-align:center;font-size:10px">◐</span> '+(E?'Хороший':'Good')+'</span><span><span class="cal-cell cal-ok" style="display:inline-block;width:16px;text-align:center;font-size:10px">○</span> '+(E?'Не сезон':'Off-season')+'</span></div>';}
+
+// TESTIMONIALS
+function testimonials(){var E=LANG==='ru';var t=[{q:E?'Desera — наш основной DMC-партнёр. Отличные тарифы и быстрая обработка.':'Desera is our primary DMC partner. Excellent rates and fast processing.',n:'Sarah Mitchell',r:E?'Horizon Travel UK':'Horizon Travel UK',i:'SM'},{q:E?'Качество продукта и скорость ответа на высоте. Рекомендуем.':'Product quality and response speed are outstanding. Recommended.',n:'Ahmed Al-Rashid',r:E?'Gulf Tours Dubai':'Gulf Tours Dubai',i:'AR'},{q:E?'Один DMC для всех направлений — серьёзно упростило работу.':'One DMC for all destinations — seriously simplified operations.',n:'Maria Chen',r:E?'Asia Pacific Travel':'Asia Pacific Travel',i:'MC'}];return '<div class="test-grid">'+t.map(function(x){return '<div class="test-card anim"><div class="test-q">"'+x.q+'"</div><div class="test-author"><div class="test-av">'+x.i+'</div><div><div class="test-name">'+x.n+'</div><div class="test-role">'+x.r+'</div></div></div></div>';}).join('')+'</div>';}
+
+function trustBadges(){return '<div class="trust-logos"><span class="trust-logo">IATA</span><span class="trust-logo">Dubai Tourism</span><span class="trust-logo">ASTA</span><span class="trust-logo">SSL Secured</span></div>';}
+
+function cvCalc(cur,rate){var u=parseFloat(document.getElementById('cv-usd').value)||0;document.getElementById('cv-result').textContent=Math.round(u*rate)+' '+cur;}
+
+function currencyConverter(cur,rate){var E=LANG==='ru';var r=parseFloat(String(rate).replace(/,/g,''));return '<div style="background:var(--c1l);border-radius:16px;padding:20px 24px;margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span style="font-size:14px;font-weight:600;color:var(--c1)">💱 '+(E?'Конвертер':'Converter')+'</span><input type="number" id="cv-usd" value="100" oninput="cvCalc(\''+cur+'\','+r+')" style="padding:10px 14px;border:1px solid var(--g200);border-radius:10px;width:110px;font-size:15px;font-family:var(--fb)"> USD = <span style="font-size:18px;font-weight:700;color:var(--dk)" id="cv-result">'+Math.round(100*r)+' '+cur+'</span></div>';}
+
+// ABOUT PAGE
+function renderAbout(){var E=LANG==='ru';return '<div style="padding:140px 0 80px;background:linear-gradient(135deg,var(--dk),#1f2937)"><div class="con" style="text-align:center"><div class="stag" style="color:var(--c1)">'+(E?'О компании':'About us')+'</div><h1 style="font-family:var(--fd);font-size:clamp(36px,5vw,52px);color:#fff;margin-bottom:16px">'+(E?'Мы создаём незабываемые travel-продукты':'We create unforgettable travel experiences')+'</h1></div></div><section class="sec"><div class="con" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center"><div><div class="stag">'+(E?'Наша история':'Our story')+'</div><h2 style="font-family:var(--fd);font-size:28px;color:var(--dk);margin-bottom:20px">'+(E?'Рождённые из страсти к путешествиям':'Born from a passion for travel')+'</h2><p style="font-size:16px;line-height:1.8;color:var(--g500);margin-bottom:16px">'+(E?'Desera Travel основана командой профессионалов с многолетним опытом на ключевых рынках. DMC нового поколения — технологичный, гибкий, ориентированный на партнёров.':'Desera Travel was founded by industry professionals with years of experience in key markets. A next-gen DMC — tech-driven, flexible, partner-focused.')+'</p></div><div style="border-radius:24px;overflow:hidden"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800" style="width:100%"></div></div></section><section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">'+(E?'Ценности':'Values')+'</div><h2 class="stitle">'+(E?'Что нами движет':'What drives us')+'</h2></div><div class="pgrid" style="grid-template-columns:repeat(3,1fr)"><div class="pc anim"><div class="pc-ic" style="background:var(--c1l)">🤝</div><div class="pt">'+(E?'Партнёрство':'Partnership')+'</div><p class="pp">'+(E?'Долгосрочные отношения. Ваш успех — наш.':'Long-term relationships. Your success is ours.')+'</p></div><div class="pc anim"><div class="pc-ic" style="background:var(--c2l)">⚡</div><div class="pt">'+(E?'Скорость':'Speed')+'</div><p class="pp">'+(E?'2 часа на ответ. Время — деньги.':'2-hour response. Time is money.')+'</p></div><div class="pc anim"><div class="pc-ic" style="background:var(--c3l)">💎</div><div class="pt">'+(E?'Качество':'Quality')+'</div><p class="pp">'+(E?'Каждый запрос — проект без компромиссов.':'Every request — a project without compromises.')+'</p></div></div></div></section><section class="sec"><div class="con"><div class="sh"><h2 class="stitle">'+(E?'Desera в цифрах':'Desera in numbers')+'</h2></div><div class="pgrid"><div class="pc" style="text-align:center"><div class="counter" data-target="11" data-suffix="+" style="font-family:var(--fd);font-size:48px;color:var(--c1)">0</div><p class="pp">'+(E?'Направлений':'Destinations')+'</p></div><div class="pc" style="text-align:center"><div class="counter" data-target="500" data-suffix="+" style="font-family:var(--fd);font-size:48px;color:var(--c1)">0</div><p class="pp">'+(E?'Отелей':'Hotels')+'</p></div><div class="pc" style="text-align:center"><div class="counter" data-target="200" data-suffix="+" style="font-family:var(--fd);font-size:48px;color:var(--c1)">0</div><p class="pp">'+(E?'Туров':'Tours')+'</p></div><div class="pc" style="text-align:center"><div class="counter" data-target="2" data-suffix="h" style="font-family:var(--fd);font-size:48px;color:var(--c1)">0</div><p class="pp">'+(E?'Время ответа':'Response time')+'</p></div></div></div></section>'+partnerForm();}
+
+// BLOG
+function renderBlog(){var E=LANG==='ru';var posts=[{t:E?'Топ-10 направлений 2026':'Top 10 Destinations 2026',d:'Mar 28',cat:'Trends',img:'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600',ex:E?'Рост спроса и маржинальности для агентств.':'Demand growth and margins for agencies.'},{t:E?'Маржа на турах по ОАЭ':'UAE Tour Margins',d:'Mar 20',cat:'Tips',img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600',ex:E?'Стратегии ценообразования.':'Pricing strategies.'},{t:E?'Китайский рынок 2026':'China Market 2026',d:'Mar 12',cat:'Market',img:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600',ex:E?'Анализ outbound-рынка.':'Outbound market analysis.'},{t:E?'Гайд по B2B-платформе':'B2B Platform Guide',d:'Mar 5',cat:'Product',img:'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600',ex:E?'Пошаговое руководство.':'Step-by-step guide.'},{t:E?'Мальдивы: маржинальность':'Maldives: Margins',d:'Feb 26',cat:'Insights',img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',ex:E?'Экономика люкс-направления.':'Luxury destination economics.'},{t:E?'Тренды MICE 2026':'MICE Trends 2026',d:'Feb 18',cat:'MICE',img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600',ex:E?'Куда движется корпоративный travel.':'Where corporate travel is heading.'}];return '<div style="padding:140px 0 80px;background:linear-gradient(135deg,var(--dk),#1f2937)"><div class="con" style="text-align:center"><div class="stag" style="color:var(--c1)">Blog</div><h1 style="font-family:var(--fd);font-size:clamp(36px,5vw,52px);color:#fff">'+(E?'Полезное для партнёров':'Insights for partners')+'</h1></div></div><section class="sec"><div class="con"><div class="sgrid">'+posts.map(function(p){return '<div class="sv anim"><div class="sv-img"><img src="'+p.img+'"></div><div class="sv-b"><div style="display:flex;gap:8px;margin-bottom:12px"><span style="font-size:11px;font-weight:600;background:var(--c1l);color:var(--c1);padding:4px 10px;border-radius:100px">'+p.cat+'</span><span style="font-size:11px;color:var(--g500)">'+p.d+'</span></div><div class="sv-t">'+p.t+'</div><p class="sv-p">'+p.ex+'</p></div></div>';}).join('')+'</div></div></section>';}
+
+// NAV LINKS for About & Blog
+var oldUpdateNav=updateNavLang;
+updateNavLang=function(){oldUpdateNav();var links=document.querySelectorAll('.nl > a');if(links[1])links[1].textContent=LANG==='ru'?'О нас':'About';if(links[2])links[2].textContent=LANG==='ru'?'Блог':'Blog';};
+
+// Update go() to handle about and blog
+var _go2=go;
+go=function(p){if(p==='about'){var app=document.getElementById('app');app.style.opacity='0';setTimeout(function(){CUR_PAGE='about';app.innerHTML=renderAbout();app.style.opacity='1';window.scrollTo(0,0);document.getElementById('nb').className='dk';updateNavLang();setTimeout(function(){initAnim();animateCounters();},200);},200);return;}if(p==='blog'){var app=document.getElementById('app');app.style.opacity='0';setTimeout(function(){CUR_PAGE='blog';app.innerHTML=renderBlog();app.style.opacity='1';window.scrollTo(0,0);document.getElementById('nb').className='dk';updateNavLang();setTimeout(initAnim,200);},200);return;}_go2(p);};
+
+// INTERACTIVE WORLD MAP
+function worldMap(){
+var E=LANG==='ru';
+var pins=[
+{id:'uae',x:58.5,y:42,n:'UAE',nr:'ОАЭ',flag:'🇦🇪'},
+{id:'thailand',x:73,y:46,n:'Thailand',nr:'Таиланд',flag:'🇹🇭'},
+{id:'vietnam',x:75,y:44,n:'Vietnam',nr:'Вьетнам',flag:'🇻🇳'},
+{id:'china',x:76,y:35,n:'China',nr:'Китай',flag:'🇨🇳'},
+{id:'turkey',x:52,y:34,n:'Turkey',nr:'Турция',flag:'🇹🇷'},
+{id:'egypt',x:50,y:42,n:'Egypt',nr:'Египет',flag:'🇪🇬'},
+{id:'europe',x:47,y:28,n:'Europe',nr:'Европа',flag:'🇪🇺'},
+{id:'maldives',x:63,y:52,n:'Maldives',nr:'Мальдивы',flag:'🇲🇻'},
+{id:'japan',x:84,y:33,n:'Japan',nr:'Япония',flag:'🇯🇵'},
+{id:'indonesia',x:77,y:55,n:'Indonesia',nr:'Индонезия',flag:'🇮🇩'},
+{id:'mauritius',x:57,y:64,n:'Mauritius',nr:'Маврикий',flag:'🇲🇺'}
+];
+return '<div style="position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:2/1;background:var(--dk);border-radius:24px;overflow:hidden;padding:20px">'+
+'<svg viewBox="0 0 1000 500" style="width:100%;height:100%;opacity:.15"><path d="M150,120 Q200,100 250,115 L300,105 Q350,95 400,110 L420,108 Q450,100 480,115 L510,120 Q530,125 540,135 L530,180 Q520,200 500,210 L480,230 Q450,250 420,240 L380,235 Q350,240 320,260 L300,280 Q280,300 250,290 L220,270 Q200,260 180,240 L160,200 Q150,170 150,150Z" fill="#fff"/><path d="M480,90 Q520,70 560,80 L600,75 Q650,70 700,85 L750,80 Q800,75 830,95 L840,120 Q845,150 830,170 L810,190 Q790,200 760,195 L730,200 Q700,210 680,200 L650,190 Q620,180 600,170 L580,175 Q560,185 540,175 L520,160 Q500,140 490,120Z" fill="#fff"/><path d="M700,160 Q730,150 760,160 L790,170 Q810,180 820,200 L830,230 Q835,260 820,280 L800,300 Q780,310 760,305 L740,310 Q720,320 700,310 L680,300 Q660,280 665,260 L670,240 Q680,220 690,200Z" fill="#fff"/><path d="M550,100 Q580,95 610,105 L640,100 Q660,95 680,110 L700,130 Q710,150 700,170 L680,180 Q660,185 640,175 L620,170 Q600,175 580,165 L560,150 Q545,130 550,110Z" fill="#fff"/><path d="M170,300 Q200,290 240,300 L280,310 Q320,320 340,340 L350,360 Q355,380 340,395 L310,400 Q280,405 250,395 L220,380 Q190,360 180,340Z" fill="#fff"/><path d="M730,350 Q770,330 810,340 L850,355 Q880,370 890,395 L880,420 Q860,440 830,445 L790,440 Q760,430 740,410 L730,390 Q725,370 730,350Z" fill="#fff"/></svg>'+
+pins.map(function(p){
+return '<div onclick="go(\''+p.id+'\')" style="position:absolute;left:'+p.x+'%;top:'+p.y+'%;transform:translate(-50%,-50%);cursor:pointer;text-align:center;z-index:2" class="map-pin">'+
+'<div style="width:14px;height:14px;background:var(--c1);border-radius:50%;margin:0 auto;box-shadow:0 0 0 4px rgba(232,96,76,.25);transition:all .3s;animation:map-pulse 3s infinite '+Math.random()*2+'s"></div>'+
+'<div style="margin-top:6px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,.5)">'+p.flag+' '+(E?p.nr:p.n)+'</div></div>';
+}).join('')+
+'<style>.map-pin:hover div:first-child{transform:scale(1.8);box-shadow:0 0 0 8px rgba(232,96,76,.3)}@keyframes map-pulse{0%,100%{box-shadow:0 0 0 4px rgba(232,96,76,.25)}50%{box-shadow:0 0 0 8px rgba(232,96,76,.1)}}</style>'+
+'</div>';
+}
+
+// Build nav dropdown
+var ddhtml='';
+COUNTRIES.forEach(function(c){ddhtml+='<a onclick="go(\''+c.id+'\')"><span class="fl">'+c.flag+'</span>'+c.n+'</a>';});
+document.getElementById('nav-dd').innerHTML=ddhtml;
+document.getElementById('ft-dd').innerHTML=COUNTRIES.slice(0,6).map(function(c){return '<a onclick="go(\''+c.id+'\')">'+c.flag+' '+c.n+'</a>';}).join('');
+
+// SERVICE TABS
+var svcData=[
+{num:'500+',img:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
+t:['Отелей по всему миру','Hotels worldwide'],
+d:['От бюджетных до ультра-люкс. Прямые контракты с Marriott, Hilton, Accor, IHG и сотнями независимых отелей. Нетто-тарифы с моментальным подтверждением.','From budget to ultra-luxury. Direct contracts with Marriott, Hilton, Accor, IHG and hundreds of independents. Net rates with instant confirmation.'],
+f:[['Нетто-тарифы','Net rates'],['Моментальное подтверждение','Instant confirmation'],['11+ направлений','11+ destinations']]},
+{num:'200+',img:'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800',
+t:['Экскурсий и туров','Excursions & tours'],
+d:['Городские прогулки, сафари, культурные маршруты, гастро-туры, приключения. Групповые и индивидуальные. С лицензированными гидами на всех языках.','City walks, safaris, cultural routes, food tours, adventures. Group and private. Licensed guides in all languages.'],
+f:[['С гидами','Licensed guides'],['Групповые и частные','Group & private'],['Ежедневно','Daily departures']]},
+{num:'24/7',img:'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=800',
+t:['Трансферы по всему миру','Transfers worldwide'],
+d:['Аэропорт, межгород, частный водитель, люкс-авто, лимузины, микроавтобусы. Онлайн-бронирование с отслеживанием. Встреча с табличкой.','Airport, intercity, private chauffeur, luxury cars, limousines, minibuses. Online booking with tracking. Meet & greet.'],
+f:[['Все типы авто','All vehicle types'],['Онлайн-трекинг','Online tracking'],['Meet & greet','Meet & greet']]},
+{num:'1000+',img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
+t:['Билетов на аттракции','Attraction tickets'],
+d:['Burj Khalifa, Ferrari World, Louvre Abu Dhabi, храмы, музеи, парки. Нетто-тарифы с моментальным e-ticket. Skip-the-line опции.','Burj Khalifa, Ferrari World, Louvre, temples, museums, parks. Net rates with instant e-tickets. Skip-the-line options.'],
+f:[['E-tickets','E-tickets'],['Skip-the-line','Skip-the-line'],['Нетто-цены','Net prices']]},
+{num:'VIP',img:'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800',
+t:['Премиум и VIP опыт','Premium & VIP experiences'],
+d:['Яхты, вертолёты, частные острова, VIP-доступ на события, личный консьерж, luxury dining. Для клиентов, которым нужно исключительное.','Yachts, helicopters, private islands, VIP event access, personal concierge, luxury dining. For clients who demand the extraordinary.'],
+f:[['Яхты и вертолёты','Yachts & helicopters'],['Частные события','Private events'],['Консьерж 24/7','Concierge 24/7']]},
+{num:'∞',img:'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800',
+t:['Кастомных пакетов','Custom packages'],
+d:['Готовые пакеты 3/5/7 ночей или полностью индивидуальные маршруты. Семейные, свадебные, приключенческие, MICE. Каждый запрос — уникальный проект с вниманием к деталям.','Ready-made 3/5/7-night packages or fully custom itineraries. Family, honeymoon, adventure, MICE. Every request is a unique project with attention to detail.'],
+f:[['Готовые и кастомные','Ready-made & custom'],['MICE и группы','MICE & groups'],['Любой сегмент','Any segment']]}
+];
+function svcTab(i){
+var E=LANG==='ru'?0:1;
+var d=svcData[i];
+document.querySelectorAll('.svc-tab').forEach(function(t,j){
+t.style.background=j===i?'#fff':'transparent';
+t.style.fontWeight=j===i?'600':'500';
+t.style.color=j===i?'var(--dk)':'var(--g500)';
+t.style.boxShadow=j===i?'0 2px 8px rgba(0,0,0,.06)':'none';
+t.classList.toggle('active',j===i);
+});
+var panel=document.getElementById('svc-panel');
+panel.style.opacity='0';
+setTimeout(function(){
+document.getElementById('svc-img').style.backgroundImage="url("+d.img+")";
+document.getElementById('svc-num').textContent=d.num;
+document.getElementById('svc-title').textContent=d.t[E];
+document.getElementById('svc-desc').textContent=d.d[E];
+var fhtml='';
+d.f.forEach(function(x){fhtml+='<div style="font-size:13px;color:var(--g700)"><span style="color:var(--c1);font-weight:700">✓</span> '+x[E]+'</div>';});
+document.getElementById('svc-features').innerHTML=fhtml;
+panel.style.opacity='1';
+},300);
+}
+
+// HERO SLIDESHOW
+var heroImages=[
+'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920',
+'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1920',
+'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920',
+'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920',
+'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920'
+];
+var heroIdx=0;
+function heroBg(i){
+heroIdx=i;
+var el=document.getElementById('hero-bg');
+if(!el)return;
+el.style.opacity='0';
+setTimeout(function(){el.style.backgroundImage="url('"+heroImages[i]+"')";el.style.opacity='1';},500);
+document.querySelectorAll('.hero-dot').forEach(function(d,j){d.classList.toggle('active',j===i);});
+}
+setInterval(function(){
+var dots=document.querySelectorAll('.hero-dot');
+if(dots.length===0)return;
+heroIdx=(heroIdx+1)%heroImages.length;
+heroBg(heroIdx);
+},5000);
+
+// Init
+go('home');
+</script>
+</body>
+</html>

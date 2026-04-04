@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desera Travel — Global DMC Partner</title>
+</head>
+<body>
+<nav id="nb"><div class="ni">
+<div class="logo" onclick="go('home')">desera<span>.</span></div>
+<div class="nl">
+<a onclick="go('home')">Home</a>
+<div class="dd-wrap"><span>Destinations <span style="font-size:10px">▾</span></span><div class="dd" id="nav-dd"></div></div>
+<a onclick="go('about')">About</a>
+<a onclick="go('blog')">Blog</a>
+<a onclick="go('partner')">Contact</a>
+<div style="display:flex;gap:2px;background:var(--g100);border-radius:100px;padding:3px" id="lang-toggle">
+<button onclick="setLang('en')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)" id="lb-en">EN</button>
+<button onclick="setLang('ru')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)" id="lb-ru">RU</button>
+</div>
+<button class="dm-toggle" onclick="toggleDark()" id="dm-btn" title="Dark mode">☀️</button>
+<button class="nav-cta" onclick="go('partner')">Become a partner</button>
+</div>
+</div></nav>
+
+<div id="app"></div>
+
+<a class="wa-float" href="https://wa.me/971000000000" target="_blank" title="Chat on WhatsApp">💬<div class="wa-pulse"></div></a>
+<div class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<footer><div class="ft">
+<div class="ft-b"><div class="logo">desera<span>.</span></div><p>Global DMC. Travel experiences across 11+ destinations worldwide.</p></div>
+<div class="ft-c"><h4>Destinations</h4><div id="ft-dd"></div></div>
+<div class="ft-c"><h4>Company</h4><a onclick="go('about')" style="cursor:pointer">About us</a><a onclick="go('blog')" style="cursor:pointer">Blog</a><a onclick="go('partner')" style="cursor:pointer">Partnership</a></div>
+<div class="ft-c"><h4>Contact</h4><a href="mailto:info@desera.travel">info@desera.travel</a><a>WhatsApp</a><a>LinkedIn</a><a>Instagram</a></div>
+</div><div class="fbar"><span>© 2026 Desera Travel.</span><span>Dubai, UAE</span></div></footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

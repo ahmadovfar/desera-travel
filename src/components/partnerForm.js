@@ -2,7 +2,7 @@ import { COUNTRIES } from '../data/countries.js';
 import { getLang } from '../state.js';
 
 // Change this to your email to receive form submissions
-export const FORM_EMAIL = 'info@desera.travel';
+export const FORM_EMAIL = 'reservation@desera.travel';
 
 export function partnerForm() {
   const E = getLang() === 'ru';

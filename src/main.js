@@ -172,7 +172,7 @@ document.addEventListener('submit', async (e) => {
       throw new Error('Server error');
     }
   } catch (err) {
-    errorEl.textContent = E ? 'Ошибка отправки. Попробуйте позже или напишите на info@desera.travel' : 'Sending failed. Please try again or email info@desera.travel';
+    errorEl.textContent = E ? 'Ошибка отправки. Попробуйте позже или напишите на reservation@desera.travel' : 'Sending failed. Please try again or email reservation@desera.travel';
     errorEl.style.display = 'block';
     btn.classList.remove('loading');
     btn.textContent = E ? 'Отправить заявку \u2192' : 'Submit application \u2192';

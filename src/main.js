@@ -41,8 +41,11 @@ function go(p, pushState = true) {
       app.innerHTML = renderAbout();
     } else if (p === 'blog') {
       app.innerHTML = renderBlog();
-    } else {
+    } else if (p === 'home') {
       app.innerHTML = renderHome();
+    } else {
+      const E = getLang() === 'ru';
+      app.innerHTML = '<section style="min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px"><div><h1 style="font-size:120px;font-family:var(--fh);color:var(--acc);margin:0;line-height:1">404</h1><p style="font-size:24px;color:var(--dk);margin:16px 0 8px;font-family:var(--fh)">' + (E ? 'Страница не найдена' : 'Page not found') + '</p><p style="color:var(--g500);margin:0 0 32px">' + (E ? 'Эта страница не существует или была перемещена.' : 'This page doesn\'t exist or has been moved.') + '</p><a onclick="go(\'home\')" style="display:inline-block;padding:14px 32px;background:var(--acc);color:#fff;border-radius:100px;font-weight:600;cursor:pointer;font-family:var(--fb);text-decoration:none">' + (E ? 'На главную' : 'Go Home') + '</a></div></section>';
     }
     window.scrollTo(0, 0);
     document.getElementById('nb').className = 'dk';
@@ -187,10 +190,24 @@ function updateMeta(p, country) {
   const base = 'Desera Travel';
   let title, desc, img;
 
+  const seoDesc = {
+    uae: { en: 'DMC partner in UAE — 300+ hotels at net rates, desert safaris, city tours in Dubai & Abu Dhabi. 2-hour response time.', ru: 'DMC партнёр в ОАЭ — 300+ отелей по нетто, сафари, туры в Дубае и Абу-Даби. Ответ за 2 часа.' },
+    thailand: { en: 'DMC partner in Thailand — 200+ hotels, island tours in Phuket & Bangkok. Temples, beaches, local team.', ru: 'DMC партнёр в Таиланде — 200+ отелей, островные туры Пхукет и Бангкок. Храмы, пляжи.' },
+    vietnam: { en: 'DMC partner in Vietnam — 150+ hotels, Ha Long Bay cruises, Hoi An tours. Local ground support.', ru: 'DMC партнёр во Вьетнаме — 150+ отелей, круизы Ха Лонг, туры Хойан. Локальная поддержка.' },
+    china: { en: 'DMC partner in China — 500+ hotels, Great Wall tours, group programs. Bilingual CN-EN team.', ru: 'DMC партнёр в Китае — 500+ отелей, Великая стена, групповые программы. Двуязычная команда.' },
+    turkey: { en: 'DMC partner in Turkey — 400+ hotels, Cappadocia balloons, Istanbul tours. All-inclusive resorts.', ru: 'DMC партнёр в Турции — 400+ отелей, шары Каппадокии, туры Стамбул. All-inclusive.' },
+    egypt: { en: 'DMC partner in Egypt — 250+ hotels, Pyramids tours, Nile cruises, Red Sea diving.', ru: 'DMC партнёр в Египте — 250+ отелей, туры к пирамидам, круизы по Нилу, дайвинг.' },
+    europe: { en: 'DMC partner in Europe — 1000+ hotels, multi-country packages. Paris, Rome, Barcelona, Prague.', ru: 'DMC партнёр в Европе — 1000+ отелей, мульти-страновые пакеты. Париж, Рим, Барселона.' },
+    maldives: { en: 'DMC partner in Maldives — 80+ luxury resorts, overwater villas, honeymoon packages.', ru: 'DMC партнёр на Мальдивах — 80+ люкс-резортов, виллы над водой, свадебные пакеты.' },
+    japan: { en: 'DMC partner in Japan — 300+ hotels & ryokans, cherry blossom tours, bullet train passes.', ru: 'DMC партнёр в Японии — 300+ отелей и рёканов, туры сакура, проездные синкансэн.' },
+    indonesia: { en: 'DMC partner in Indonesia — 200+ hotels & villas, Bali temples, Komodo expeditions.', ru: 'DMC партнёр в Индонезии — 200+ отелей и вилл, храмы Бали, экспедиции Комодо.' },
+    mauritius: { en: 'DMC partner in Mauritius — 60+ luxury resorts, catamaran cruises, honeymoon packages.', ru: 'DMC партнёр на Маврикии — 60+ люкс-резортов, круизы на катамаране, свадебные пакеты.' }
+  };
+
   if (country) {
     const name = E ? country.nr : country.n;
     title = name + ' — ' + base + ' | DMC';
-    desc = country[getLang()].h;
+    desc = seoDesc[country.id] ? seoDesc[country.id][getLang()] : country[getLang()].h;
     img = country.img;
   } else if (p === 'about') {
     title = (E ? 'О компании' : 'About Us') + ' — ' + base;

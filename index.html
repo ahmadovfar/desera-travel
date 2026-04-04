@@ -11,23 +11,105 @@
   gtag('config', 'G-7CF4JKMM27');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon & Icons -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="description" content="Desera Travel — Global DMC partner. Extraordinary travel experiences across 11+ destinations. B2B platform for travel agencies.">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- SEO Meta -->
+<meta name="description" content="Desera Travel — Global DMC partner for travel agencies. 500+ hotels, 200+ tours across 11+ destinations. Net rates, 2-hour response. Dubai to Tokyo.">
+<meta name="keywords" content="DMC, destination management company, B2B travel, travel agency partner, hotel net rates, tours, transfers, Dubai, Thailand, Turkey, Egypt, Europe, Maldives, Japan">
+<meta name="author" content="Desera Travel">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://desera.travel/" id="canonical">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Desera Travel">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:title" content="Desera Travel — Global DMC Partner">
+<meta property="og:description" content="Desera Travel — Global DMC partner for travel agencies. 500+ hotels, 200+ tours across 11+ destinations.">
+<meta property="og:url" content="https://desera.travel/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desera Travel — Global DMC Partner">
+<meta name="twitter:description" content="Global DMC partner for travel agencies. 500+ hotels, 200+ tours across 11+ destinations.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200">
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="en" href="https://desera.travel/" id="hreflang-en">
+<link rel="alternate" hreflang="ru" href="https://desera.travel/" id="hreflang-ru">
+<link rel="alternate" hreflang="x-default" href="https://desera.travel/" id="hreflang-default">
+
+<!-- Preload hero image for LCP -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920">
 <meta name="theme-color" content="#1A1A1A">
 <title>Desera Travel — Global DMC Partner</title>
+
+<!-- JSON-LD Organization Schema -->
+<script type="application/ld+json" id="schema-org">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Desera Travel",
+  "url": "https://desera.travel",
+  "logo": "https://desera.travel/favicon.svg",
+  "description": "Global Destination Management Company (DMC) providing B2B travel services across 11+ destinations worldwide.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@desera.travel",
+    "contactType": "sales",
+    "availableLanguage": ["English", "Russian"]
+  },
+  "areaServed": [
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Thailand"},
+    {"@type": "Country", "name": "Vietnam"},
+    {"@type": "Country", "name": "China"},
+    {"@type": "Country", "name": "Turkey"},
+    {"@type": "Country", "name": "Egypt"},
+    {"@type": "Country", "name": "Maldives"},
+    {"@type": "Country", "name": "Japan"},
+    {"@type": "Country", "name": "Indonesia"},
+    {"@type": "Country", "name": "Mauritius"}
+  ],
+  "knowsLanguage": ["en", "ru"],
+  "numberOfEmployees": {"@type": "QuantitativeValue", "minValue": 10, "maxValue": 50},
+  "foundingLocation": {"@type": "Place", "name": "Dubai, UAE"}
+}
+</script>
+
+<!-- Dynamic page schema placeholder -->
+<script type="application/ld+json" id="schema-page">{}</script>
 </head>
 <body>
-<nav id="nb"><div class="ni">
+<nav id="nb" aria-label="Main navigation"><div class="ni">
 <div class="logo" onclick="go('home')">desera<span>.</span></div>
 <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
 <span></span><span></span><span></span>
 </button>
 <div class="nl" id="nl">
-<a onclick="go('home')">Home</a>
+<a href="/" onclick="event.preventDefault();go('home')">Home</a>
 <div class="dd-wrap"><span>Destinations <span style="font-size:10px">▾</span></span><div class="dd" id="nav-dd"></div></div>
-<a onclick="go('about')">About</a>
-<a onclick="go('blog')">Blog</a>
-<a onclick="go('partner')">Contact</a>
+<a href="/about" onclick="event.preventDefault();go('about')">About</a>
+<a href="/blog" onclick="event.preventDefault();go('blog')">Blog</a>
+<a href="/partner" onclick="event.preventDefault();go('partner')">Contact</a>
 <div style="display:flex;gap:2px;background:var(--g100);border-radius:100px;padding:3px" id="lang-toggle">
 <button onclick="setLang('en')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)" id="lb-en">EN</button>
 <button onclick="setLang('ru')" style="padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)" id="lb-ru">RU</button>
@@ -45,16 +127,16 @@
 </div>
 <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 
-<div id="app"></div>
+<main id="app" role="main"></main>
 
-<a class="wa-float" href="https://wa.me/971000000000" target="_blank" title="Chat on WhatsApp">💬<div class="wa-pulse"></div></a>
-<div class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<a class="wa-float" href="https://wa.me/971000000000" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬<div class="wa-pulse"></div></a>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <footer><div class="ft">
 <div class="ft-b"><div class="logo">desera<span>.</span></div><p>Global DMC. Travel experiences across 11+ destinations worldwide.</p></div>
 <div class="ft-c"><h4>Destinations</h4><div id="ft-dd"></div></div>
-<div class="ft-c"><h4>Company</h4><a onclick="go('about')" style="cursor:pointer">About us</a><a onclick="go('blog')" style="cursor:pointer">Blog</a><a onclick="go('partner')" style="cursor:pointer">Partnership</a></div>
-<div class="ft-c"><h4>Contact</h4><a href="mailto:info@desera.travel">info@desera.travel</a><a>WhatsApp</a><a>LinkedIn</a><a>Instagram</a></div>
+<div class="ft-c"><h4>Company</h4><a href="/about" onclick="event.preventDefault();go('about')">About us</a><a href="/blog" onclick="event.preventDefault();go('blog')">Blog</a><a href="/partner" onclick="event.preventDefault();go('partner')">Partnership</a></div>
+<div class="ft-c"><h4>Contact</h4><a href="mailto:info@desera.travel">info@desera.travel</a><a href="https://wa.me/971000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="#" rel="noopener noreferrer">LinkedIn</a><a href="#" rel="noopener noreferrer">Instagram</a></div>
 </div><div class="fbar"><span>© 2026 Desera Travel.</span><span>Dubai, UAE</span></div></footer>
 
 <script type="module" src="/src/main.js"></script>

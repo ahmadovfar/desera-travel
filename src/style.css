@@ -181,6 +181,17 @@ footer{background:#fff;border-top:1px solid var(--g200);padding:64px 0 32px}
 .anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.anim.in{opacity:1;transform:translateY(0)}
 .counter{font-variant-numeric:tabular-nums}
 
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--g200);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:all .3s}
+.faq-item[open]{border-color:var(--acc);box-shadow:0 4px 16px rgba(232,96,76,.08)}
+.faq-q{padding:20px 24px;font-family:var(--fb);font-size:16px;font-weight:600;color:var(--dk);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.faq-q::after{content:'+';font-size:24px;color:var(--acc);font-weight:300;transition:transform .3s}
+.faq-item[open] .faq-q::after{transform:rotate(45deg)}
+.faq-q::-webkit-details-marker{display:none}
+.faq-a{padding:0 24px 20px;font-size:15px;line-height:1.7;color:var(--g500)}
+.faq-a p{margin:0}
+
 /* SVC PANEL */
 #svc-panel{transition:opacity .3s ease}
 .svc-tab:hover{background:var(--g100)!important}

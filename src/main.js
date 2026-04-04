@@ -226,17 +226,109 @@ function updateMeta(p, country) {
     img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200';
   }
 
+  if (!img) img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200';
+  const url = 'https://desera.travel' + pageToPath(p);
+
   document.title = title;
   setMeta('description', desc);
   setMeta('og:title', title);
   setMeta('og:description', desc);
-  if (img) setMeta('og:image', img);
-  setMeta('og:url', location.href);
+  setMeta('og:image', img);
+  setMeta('og:url', url);
   setMeta('og:type', 'website');
+  setMeta('og:locale', E ? 'ru_RU' : 'en_US');
+  setMeta('twitter:card', 'summary_large_image');
+  setMeta('twitter:title', title);
+  setMeta('twitter:description', desc);
+  setMeta('twitter:image', img);
+
+  // Canonical
+  const canon = document.getElementById('canonical');
+  if (canon) canon.href = url;
+
+  // Hreflang
+  const hEn = document.getElementById('hreflang-en');
+  const hRu = document.getElementById('hreflang-ru');
+  const hDef = document.getElementById('hreflang-default');
+  if (hEn) hEn.href = url;
+  if (hRu) hRu.href = url;
+  if (hDef) hDef.href = url;
+
+  // Dynamic JSON-LD schema per page
+  updatePageSchema(p, country, title, desc, img, url);
+}
+
+function updatePageSchema(p, country, title, desc, img, url) {
+  const schemaEl = document.getElementById('schema-page');
+  if (!schemaEl) return;
+  let schema = {};
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://desera.travel/' }
+    ]
+  };
+
+  if (country) {
+    const L = country[getLang()];
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Destinations' });
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 3, 'name': country.n, 'item': url });
+
+    const faq = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        { '@type': 'Question', 'name': 'What is the best season to visit ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.season } },
+        { '@type': 'Question', 'name': 'Do I need a visa for ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.visa } },
+        { '@type': 'Question', 'name': 'What travel tips should I know for ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': L.tips } },
+        { '@type': 'Question', 'name': 'What currency is used in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Currency: ' + country.cur + '. Exchange rate: 1 USD = ' + country.rate + ' ' + country.cur + '.' } },
+        { '@type': 'Question', 'name': 'Why choose Desera as your DMC partner in ' + country.n + '?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Desera Travel offers direct contracts, competitive net rates, local ground support, and a 2-hour response guarantee.' } }
+      ]
+    };
+
+    const destination = {
+      '@context': 'https://schema.org',
+      '@type': 'TouristDestination',
+      'name': country.n,
+      'description': desc,
+      'image': country.img,
+      'url': url,
+      'touristType': ['Travel Agencies', 'Tour Operators'],
+      'includesAttraction': country.tours.slice(0, 3).map(function(t) {
+        return { '@type': 'TouristAttraction', 'name': t.t, 'description': t.p };
+      })
+    };
+
+    schema = [breadcrumb, faq, destination];
+  } else if (p === 'about') {
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'About', 'item': url });
+    schema = breadcrumb;
+  } else if (p === 'blog') {
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': url });
+    schema = breadcrumb;
+  } else if (p === 'partner') {
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Become a Partner', 'item': url });
+    schema = breadcrumb;
+  } else {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': title,
+      'description': desc,
+      'url': url,
+      'image': img
+    };
+  }
+
+  schemaEl.textContent = JSON.stringify(schema);
 }
 
 function setMeta(name, content) {
-  const attr = name.startsWith('og:') ? 'property' : 'name';
+  const isOg = name.startsWith('og:');
+  const isTwitter = name.startsWith('twitter:');
+  const attr = (isOg || isTwitter) ? (isOg ? 'property' : 'name') : 'name';
   let el = document.querySelector('meta[' + attr + '="' + name + '"]');
   if (!el) {
     el = document.createElement('meta');

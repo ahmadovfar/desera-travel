@@ -9,12 +9,12 @@ export function renderCountry(c) {
   const L = c[getLang()];
   const E = getLang() === 'ru';
   const products = [
-    { ic: '🏨', bg: 'var(--c1l)', t: E ? 'Отели' : 'Hotels', p: E ? 'Широкий выбор по конкурентным нетто.' : 'Wide selection at competitive net rates.' },
-    { ic: '🚗', bg: 'var(--c2l)', t: E ? 'Трансферы' : 'Transfers', p: E ? 'Аэропорт, межгород, частный водитель.' : 'Airport, intercity, private chauffeur.' },
-    { ic: '🎫', bg: 'var(--c3l)', t: E ? 'Билеты' : 'Tickets', p: E ? 'Аттракции, парки, музеи по нетто.' : 'Attractions, parks, museums at net rates.' },
-    { ic: '🏜️', bg: 'var(--gdl)', t: E ? 'Экскурсии' : 'Excursions', p: E ? 'Гиды, культура, приключения.' : 'Guided tours, culture, adventure.' },
-    { ic: '🛥️', bg: '#F3E8FF', t: E ? 'Премиум и VIP' : 'Premium & VIP', p: E ? 'Яхты, вертолёты, эксклюзив.' : 'Yachts, helicopters, exclusive.' },
-    { ic: '📦', bg: '#FFF1F0', t: E ? 'Пакеты' : 'Packages', p: E ? 'Готовые и кастомные.' : 'Ready-made and customizable.' }
+    { ic: '🏨', bg: 'var(--c1l)', t: E ? 'Отели' : 'Hotels', p: E ? 'От бюджетных до 5-звёздочных. Прямые контракты с ведущими сетями, нетто-тарифы и моментальное подтверждение.' : 'Budget to 5-star properties. Direct contracts with major chains, net rates, and instant confirmation for your clients.' },
+    { ic: '🚗', bg: 'var(--c2l)', t: E ? 'Трансферы' : 'Transfers', p: E ? 'Встреча в аэропорту, межгородские маршруты, частный водитель. Все классы авто от эконом до VIP.' : 'Airport meet & greet, intercity routes, private chauffeur. All vehicle classes from economy to luxury VIP.' },
+    { ic: '🎫', bg: 'var(--c3l)', t: E ? 'Билеты' : 'Tickets', p: E ? 'Входные билеты в аттракции, парки, музеи и шоу по нетто-ценам. Skip-the-line опции.' : 'Entry tickets to attractions, theme parks, museums, and shows at net rates. Skip-the-line options available.' },
+    { ic: '🏜️', bg: 'var(--gdl)', t: E ? 'Экскурсии' : 'Excursions', p: E ? 'Групповые и частные туры с лицензированными гидами. Культура, природа, гастрономия и приключения.' : 'Group and private tours with licensed guides. Culture, nature, gastronomy, and adventure experiences.' },
+    { ic: '🛥️', bg: '#F3E8FF', t: E ? 'Премиум и VIP' : 'Premium & VIP', p: E ? 'Яхты, вертолёты, частные ужины и эксклюзивные впечатления для VIP-клиентов вашего агентства.' : 'Yachts, helicopters, private dining, and exclusive experiences for your agency\'s high-end clients.' },
+    { ic: '📦', bg: '#FFF1F0', t: E ? 'Пакеты' : 'Packages', p: E ? 'Готовые турпакеты или полностью кастомные программы. Отель + трансфер + экскурсии в одном предложении.' : 'Pre-built tour packages or fully custom itineraries. Hotel + transfer + excursions bundled in one proposal.' }
   ];
   const cName = E ? c.nr : c.n;
   const seoH1 = {
@@ -43,7 +43,6 @@ export function renderCountry(c) {
     '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Для агента' : 'Agent toolkit') + '</div><h2 class="stitle">' + (E ? 'Важное о ' + cName : 'Essential ' + c.n + ' info') + '</h2></div><div class="info-grid"><div class="info-card"><div class="info-ic">🛂</div><div class="info-t">' + (E ? 'Виза' : 'Visa') + '</div><div class="info-v">' + L.visa + '</div></div><div class="info-card"><div class="info-ic">☀️</div><div class="info-t">' + (E ? 'Сезон' : 'Best season') + '</div><div class="info-v">' + L.season + '</div></div><div class="info-card"><div class="info-ic">⏰</div><div class="info-t">' + (E ? 'Часовой пояс' : 'Time zone') + '</div><div class="info-v">' + c.tz + '</div></div><div class="info-card"><div class="info-ic">💡</div><div class="info-t">' + (E ? 'Советы' : 'Tips') + '</div><div class="info-v">' + L.tips + '</div></div></div></div></section>' +
     trustBar() +
     whyPartner() +
-    destinationsGrid() +
     servicesSection() +
     '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Отзывы партнёров' : 'Partner testimonials') + '</div><h2 class="stitle">' + (E ? 'Что говорят наши партнёры' : 'What our partners say') + '</h2></div>' + testimonials() + '</div></section>' +
     trustBadges() +

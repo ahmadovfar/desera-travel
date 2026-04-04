@@ -122,4 +122,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://desera.travel/mauritius"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://desera.travel/mauritius"/>
   </url>
+  <url>
+    <loc>https://desera.travel/privacy</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://desera.travel/terms</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

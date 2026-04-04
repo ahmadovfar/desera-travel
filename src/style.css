@@ -192,6 +192,30 @@ footer{background:#fff;border-top:1px solid var(--g200);padding:64px 0 32px}
 .faq-a{padding:0 24px 20px;font-size:15px;line-height:1.7;color:var(--g500)}
 .faq-a p{margin:0}
 
+/* LEGAL PAGES */
+.legal-content h2{font-family:var(--fd);font-size:22px;color:var(--dk);margin:40px 0 16px;padding-top:20px;border-top:1px solid var(--g200)}
+.legal-content h2:first-child{border-top:none;margin-top:0}
+.legal-content h3{font-family:var(--fb);font-size:17px;color:var(--dk);margin:24px 0 12px}
+.legal-content p{font-size:15px;line-height:1.8;color:var(--g500);margin:0 0 16px}
+.legal-content ul{margin:0 0 16px;padding-left:24px}
+.legal-content li{font-size:15px;line-height:1.8;color:var(--g500);margin-bottom:6px}
+.legal-content a{color:var(--acc);text-decoration:underline}
+.legal-content strong{color:var(--dk)}
+
+/* COOKIE CONSENT */
+#cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#fff;border-top:1px solid var(--g200);box-shadow:0 -4px 24px rgba(0,0,0,.08);padding:20px 0;transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);opacity:0}
+#cookie-bar.show{transform:translateY(0);opacity:1}
+.cookie-inner{max-width:var(--mx);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.cookie-text{flex:1;min-width:280px;display:flex;align-items:center;gap:4px}
+.cookie-text p{font-size:14px;line-height:1.6;color:var(--g500);margin:0}
+.cookie-text a{color:var(--acc);text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{padding:10px 24px;background:var(--acc);color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:all .3s}
+.cookie-accept:hover{background:#d4543f}
+.cookie-decline{padding:10px 24px;background:transparent;color:var(--g500);border:1px solid var(--g200);border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .3s}
+.cookie-decline:hover{border-color:var(--g500);color:var(--dk)}
+@media(max-width:600px){.cookie-inner{flex-direction:column;text-align:center}.cookie-btns{width:100%;justify-content:center}}
+
 /* SVC PANEL */
 #svc-panel{transition:opacity .3s ease}
 .svc-tab:hover{background:var(--g100)!important}

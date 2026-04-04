@@ -8,6 +8,8 @@ import { renderCountry } from './pages/country.js';
 import { renderAbout } from './pages/about.js';
 import { renderBlog } from './pages/blog.js';
 import { renderPartner } from './pages/partner.js';
+import { renderPrivacy } from './pages/privacy.js';
+import { renderTerms } from './pages/terms.js';
 
 // ---- NAV DROPDOWN ----
 const ddhtml = COUNTRIES.map(c => '<a data-nav="' + c.id + '"><span class="fl">' + c.flag + '</span>' + c.n + '</a>').join('');
@@ -42,6 +44,10 @@ function go(p, pushState = true) {
       app.innerHTML = renderAbout();
     } else if (p === 'blog') {
       app.innerHTML = renderBlog();
+    } else if (p === 'privacy') {
+      app.innerHTML = renderPrivacy();
+    } else if (p === 'terms') {
+      app.innerHTML = renderTerms();
     } else if (p === 'home') {
       app.innerHTML = renderHome();
     } else {
@@ -220,6 +226,12 @@ function updateMeta(p, country) {
   } else if (p === 'partner') {
     title = (E ? 'Стать партнёром' : 'Become a Partner') + ' — ' + base;
     desc = E ? 'Заполните форму — мы ответим в течение 2 часов.' : 'Fill out the form — we respond within 2 hours.';
+  } else if (p === 'privacy') {
+    title = (E ? 'Политика конфиденциальности' : 'Privacy Policy') + ' — ' + base;
+    desc = E ? 'Как Desera Travel собирает, использует и защищает ваши персональные данные.' : 'How Desera Travel collects, uses, and protects your personal data.';
+  } else if (p === 'terms') {
+    title = (E ? 'Условия использования' : 'Terms of Service') + ' — ' + base;
+    desc = E ? 'Условия использования сайта desera.travel и услуг Desera Travel.' : 'Terms governing use of desera.travel and Desera Travel services.';
   } else {
     title = base + ' — Global DMC Partner';
     desc = E ? 'Исключительные travel-продукты в 11+ направлениях мира.' : 'Extraordinary travel experiences across 11+ destinations.';
@@ -496,3 +508,31 @@ window.addEventListener('load', () => {
     }, 400);
   }
 });
+
+// ---- COOKIE CONSENT ----
+(function() {
+  if (localStorage.getItem('cookie_consent')) return;
+  const E = getLang() === 'ru';
+  const bar = document.createElement('div');
+  bar.id = 'cookie-bar';
+  bar.innerHTML = '<div class="cookie-inner"><div class="cookie-text"><span style="font-size:20px;margin-right:8px">🍪</span><p>' +
+    (E ? 'Мы используем файлы cookie для аналитики и улучшения работы сайта. Продолжая использование, вы соглашаетесь с нашей <a href="/privacy" onclick="event.preventDefault();go(\'privacy\')">Политикой конфиденциальности</a>.'
+       : 'We use cookies for analytics and to improve your experience. By continuing, you agree to our <a href="/privacy" onclick="event.preventDefault();go(\'privacy\')">Privacy Policy</a>.') +
+    '</p></div><div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">' + (E ? 'Принять' : 'Accept') + '</button><button class="cookie-decline" onclick="declineCookies()">' + (E ? 'Только необходимые' : 'Essential only') + '</button></div></div>';
+  document.body.appendChild(bar);
+  setTimeout(function() { bar.classList.add('show'); }, 1000);
+})();
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookie_consent', 'all');
+  var bar = document.getElementById('cookie-bar');
+  if (bar) { bar.classList.remove('show'); setTimeout(function() { bar.remove(); }, 400); }
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookie_consent', 'essential');
+  // Disable GA if user declines
+  window['ga-disable-G-7CF4JKMM27'] = true;
+  var bar = document.getElementById('cookie-bar');
+  if (bar) { bar.classList.remove('show'); setTimeout(function() { bar.remove(); }, 400); }
+};

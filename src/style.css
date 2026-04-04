@@ -150,7 +150,12 @@ nav:has(.nl.open) .ni{position:fixed;top:0;left:0;right:0;z-index:1002;height:72
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
 .form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:span 2}
 .form-field label{font-size:13px;font-weight:600;color:var(--dk);text-transform:uppercase;letter-spacing:.3px}
-.form-field input,.form-field select,.form-field textarea{padding:14px 18px;border:1px solid var(--g200);border-radius:12px;font-size:15px;font-family:var(--fb);color:var(--dk);background:#fff;outline:none}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--c1)}
+.form-field input,.form-field select,.form-field textarea{padding:14px 18px;border:1px solid var(--g200);border-radius:12px;font-size:15px;font-family:var(--fb);color:var(--dk);background:#fff;outline:none;transition:border-color .2s}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--c1)}
+.form-field input.invalid,.form-field select.invalid,.form-field textarea.invalid{border-color:#e53e3e;animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.bp.loading{opacity:.7;pointer-events:none}
+.bp.loading::after{content:'';display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-left:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
 .form-field textarea{resize:vertical;min-height:80px}
 .checks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 20px}
 .check-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--g700)}.check-item input{accent-color:var(--c1);width:16px;height:16px}

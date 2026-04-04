@@ -1,6 +1,7 @@
 import './style.css';
 import { COUNTRIES } from './data/countries.js';
 import { svcData } from './data/services.js';
+import { FORM_EMAIL } from './components/partnerForm.js';
 import { getLang, setLangVal, getCurPage, setCurPage } from './state.js';
 import { renderHome } from './pages/home.js';
 import { renderCountry } from './pages/country.js';
@@ -79,16 +80,10 @@ document.addEventListener('click', (e) => {
   const svcEl = e.target.closest('[data-svc]');
   if (svcEl) { svcTab(parseInt(svcEl.dataset.svc)); return; }
 
-  const submitEl = e.target.closest('[data-action="submit-form"]');
-  if (submitEl) {
-    const E = getLang() === 'ru';
-    alert(E ? 'Спасибо! Мы свяжемся в течение 2 часов.' : 'Thank you! We will contact you within 2 hours.');
-    return;
-  }
-
   // Trip builder selection
-  const tbOptEl = e.target.closest('.tb-opt');
-  if (tbOptEl) { tbOptEl.classList.toggle('sel'); return; }
+  const tbOptEl2 = e.target.closest('.tb-opt');
+  if (tbOptEl2) { tbOptEl2.classList.toggle('sel'); return; }
+
 });
 
 // ---- LANGUAGE ----
@@ -116,6 +111,75 @@ function updateNavLang() {
   const ddSpan = document.querySelector('.dd-wrap > span');
   if (ddSpan) ddSpan.innerHTML = (E ? 'Направления' : 'Destinations') + ' <span style="font-size:10px">▾</span>';
 }
+
+// ---- FORM SUBMISSION ----
+document.addEventListener('submit', async (e) => {
+  const form = e.target.closest('#partner-form');
+  if (!form) return;
+  e.preventDefault();
+
+  const E = getLang() === 'ru';
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+
+  required.forEach(input => {
+    input.classList.remove('invalid');
+    if (!input.value.trim()) {
+      input.classList.add('invalid');
+      valid = false;
+    }
+    if (input.type === 'email' && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+      input.classList.add('invalid');
+      valid = false;
+    }
+  });
+
+  const errorEl = document.getElementById('form-error');
+  if (!valid) {
+    errorEl.textContent = E ? 'Заполните все обязательные поля' : 'Please fill in all required fields';
+    errorEl.style.display = 'block';
+    form.querySelector('.invalid')?.focus();
+    return;
+  }
+
+  errorEl.style.display = 'none';
+  const btn = document.getElementById('form-submit-btn');
+  btn.classList.add('loading');
+  btn.textContent = E ? 'Отправка...' : 'Sending...';
+
+  try {
+    const formData = new FormData(form);
+    // Collect checked destinations into one field
+    const dests = [];
+    form.querySelectorAll('input[name="destinations"]:checked').forEach(cb => dests.push(cb.value));
+    formData.set('destinations', dests.join(', '));
+
+    const res = await fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+
+    if (res.ok) {
+      document.getElementById('form-fields').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    errorEl.textContent = E ? 'Ошибка отправки. Попробуйте позже или напишите на info@desera.travel' : 'Sending failed. Please try again or email info@desera.travel';
+    errorEl.style.display = 'block';
+    btn.classList.remove('loading');
+    btn.textContent = E ? 'Отправить заявку \u2192' : 'Submit application \u2192';
+  }
+});
+
+// Clear validation on input
+document.addEventListener('input', (e) => {
+  if (e.target.classList.contains('invalid')) {
+    e.target.classList.remove('invalid');
+  }
+});
 
 // ---- META / SEO ----
 function updateMeta(p, country) {

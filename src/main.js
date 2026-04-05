@@ -104,12 +104,17 @@ document.addEventListener('click', (e) => {
 // ---- LANGUAGE ----
 function setLang(l) {
   setLangVal(l);
-  document.getElementById('lb-en').style.cssText = l === 'en'
+  document.documentElement.lang = l;
+  const lbEn = document.getElementById('lb-en');
+  const lbRu = document.getElementById('lb-ru');
+  lbEn.style.cssText = l === 'en'
     ? 'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)'
     : 'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)';
-  document.getElementById('lb-ru').style.cssText = l === 'ru'
+  lbRu.style.cssText = l === 'ru'
     ? 'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--dk);font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.08)'
     : 'padding:5px 14px;border:none;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--g500);font-family:var(--fb)';
+  lbEn.setAttribute('aria-checked', l === 'en');
+  lbRu.setAttribute('aria-checked', l === 'ru');
   go(getCurPage());
 }
 window.setLang = setLang;
@@ -392,14 +397,20 @@ function setMeta(name, content) {
 
 // ---- MOBILE MENU ----
 function toggleMenu() {
-  document.getElementById('burger').classList.toggle('open');
-  document.getElementById('nl').classList.toggle('open');
+  const burger = document.getElementById('burger');
+  const nl = document.getElementById('nl');
+  burger.classList.toggle('open');
+  nl.classList.toggle('open');
+  burger.setAttribute('aria-expanded', burger.classList.contains('open'));
 }
 window.toggleMenu = toggleMenu;
 
 function closeMenu() {
-  document.getElementById('burger').classList.remove('open');
-  document.getElementById('nl').classList.remove('open');
+  const burger = document.getElementById('burger');
+  const nl = document.getElementById('nl');
+  burger.classList.remove('open');
+  nl.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
 }
 
 // ---- DARK MODE ----

@@ -8,7 +8,11 @@ import { renderCountry } from './pages/country.js';
 import { renderAbout } from './pages/about.js';
 import { renderBlog, renderBlogPost } from './pages/blog.js';
 import { blogPosts } from './data/blogPosts.js';
+import { blogPostsRu } from './data/blogPostsRu.js';
+import { blogPostsRu2 } from './data/blogPostsRu2.js';
 import { renderPartner } from './pages/partner.js';
+
+var allBlogRu = Object.assign({}, blogPostsRu, blogPostsRu2);
 import { renderPrivacy } from './pages/privacy.js';
 import { renderTerms } from './pages/terms.js';
 
@@ -260,8 +264,9 @@ function updateMeta(p, country) {
     var bpId = p.replace('blog/', '');
     var bp = blogPosts.find(function(x) { return x.id === bpId; });
     if (bp) {
-      title = bp.title + ' — ' + base;
-      desc = bp.metaDesc;
+      var bpRu = E ? allBlogRu[bp.id] : null;
+      title = (bpRu ? bpRu.title : bp.title) + ' \u2014 ' + base;
+      desc = bpRu ? bpRu.metaDesc : bp.metaDesc;
       img = bp.image;
     } else {
       title = 'Article Not Found — ' + base;

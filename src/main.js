@@ -6,7 +6,8 @@ import { getLang, setLangVal, getCurPage, setCurPage } from './state.js';
 import { renderHome } from './pages/home.js';
 import { renderCountry } from './pages/country.js';
 import { renderAbout } from './pages/about.js';
-import { renderBlog } from './pages/blog.js';
+import { renderBlog, renderBlogPost } from './pages/blog.js';
+import { blogPosts } from './data/blogPosts.js';
 import { renderPartner } from './pages/partner.js';
 import { renderPrivacy } from './pages/privacy.js';
 import { renderTerms } from './pages/terms.js';
@@ -42,6 +43,9 @@ function go(p, pushState = true) {
       app.innerHTML = renderPartner();
     } else if (p === 'about') {
       app.innerHTML = renderAbout();
+    } else if (p.startsWith('blog/')) {
+      var postId = p.replace('blog/', '');
+      app.innerHTML = renderBlogPost(postId);
     } else if (p === 'blog') {
       app.innerHTML = renderBlog();
     } else if (p === 'privacy') {
@@ -220,6 +224,17 @@ function updateMeta(p, country) {
   } else if (p === 'about') {
     title = (E ? 'О компании' : 'About Us') + ' — ' + base;
     desc = E ? 'Мы создаём незабываемые travel-продукты по всему миру.' : 'We create unforgettable travel experiences worldwide.';
+  } else if (p.startsWith('blog/')) {
+    var bpId = p.replace('blog/', '');
+    var bp = blogPosts.find(function(x) { return x.id === bpId; });
+    if (bp) {
+      title = bp.title + ' — ' + base;
+      desc = bp.metaDesc;
+      img = bp.image;
+    } else {
+      title = 'Article Not Found — ' + base;
+      desc = 'The requested article could not be found.';
+    }
   } else if (p === 'blog') {
     title = (E ? 'Блог' : 'Blog') + ' — ' + base;
     desc = E ? 'Полезное для партнёров: тренды, маржинальность, рынки.' : 'Insights for partners: trends, margins, markets.';
@@ -321,6 +336,27 @@ function updatePageSchema(p, country, title, desc, img, url) {
   } else if (p === 'about') {
     breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'About', 'item': url });
     schema = breadcrumb;
+  } else if (p.startsWith('blog/')) {
+    var bpSlug = p.replace('blog/', '');
+    var bpData = blogPosts.find(function(x) { return x.id === bpSlug; });
+    breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': 'https://desera.travel/blog' });
+    if (bpData) {
+      breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 3, 'name': bpData.title, 'item': url });
+      var articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        'headline': bpData.title,
+        'description': bpData.metaDesc,
+        'image': bpData.image,
+        'datePublished': bpData.date,
+        'author': { '@type': 'Organization', 'name': 'Desera Travel' },
+        'publisher': { '@type': 'Organization', 'name': 'Desera Travel', 'url': 'https://desera.travel' },
+        'url': url
+      };
+      schema = [breadcrumb, articleSchema];
+    } else {
+      schema = breadcrumb;
+    }
   } else if (p === 'blog') {
     breadcrumb.itemListElement.push({ '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': url });
     schema = breadcrumb;

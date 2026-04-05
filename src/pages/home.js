@@ -5,6 +5,7 @@ import { partnerForm } from '../components/partnerForm.js';
 import { testimonials, trustBadges } from '../components/testimonials.js';
 import { seasonCalendar } from '../components/calendar.js';
 import { trustBar, whyPartner } from '../components/trustBar.js';
+import { leadMagnet } from '../components/leadMagnet.js';
 
 export function renderHome() {
   const E = getLang() === 'ru';
@@ -16,6 +17,7 @@ export function renderHome() {
     '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Отзывы' : 'Testimonials') + '</div><h2 class="stitle">' + (E ? 'Что говорят партнёры' : 'What partners say') + '</h2></div>' + testimonials() + '</div></section>' +
     trustBadges() +
     '<section class="sec"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Сезонный календарь' : 'Seasonal calendar') + '</div><h2 class="stitle">' + (E ? 'Когда лучше ехать' : 'Best time to travel') + '</h2></div>' + seasonCalendar() + '</div></section>' +
+    leadMagnet() +
     partnerForm();
 }
 

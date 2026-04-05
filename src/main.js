@@ -194,6 +194,33 @@ document.addEventListener('submit', async (e) => {
   }
 });
 
+// ---- LEAD MAGNET ----
+window.handleLeadMagnet = function(e) {
+  e.preventDefault();
+  const form = document.getElementById('lm-form');
+  const email = form.querySelector('input[name="email"]').value;
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+
+  const btn = document.getElementById('lm-btn');
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, _subject: 'Margin Guide Download Request', _template: 'table' })
+  }).then(function() {
+    form.style.display = 'none';
+    document.getElementById('lm-success').style.display = 'block';
+    if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', { event_category: 'engagement' });
+  }).catch(function() {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  });
+
+  return false;
+};
+
 // Clear validation on input
 document.addEventListener('input', (e) => {
   if (e.target.classList.contains('invalid')) {

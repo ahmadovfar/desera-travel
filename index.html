@@ -153,6 +153,68 @@
 <div class="ft-c"><h4>Follow us</h4><a href="https://www.instagram.com/desera.travel/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/desera.travel/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/dmc-desera-travel" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
 </div><div class="fbar"><span>© 2026 Desera Travel.</span><span><a href="/privacy" onclick="event.preventDefault();go('privacy')" style="color:var(--g500);text-decoration:none;margin-right:16px">Privacy Policy</a><a href="/terms" onclick="event.preventDefault();go('terms')" style="color:var(--g500);text-decoration:none">Terms of Service</a></span><span>Dubai, UAE</span></div></footer>
 
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,"clarity","script","CLARITY_PROJECT_ID");
+</script>
+
 <script type="module" src="/src/main.js"></script>
+
+<!-- Service Worker & GA Event Tracking -->
+<script>
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+
+// GA Conversion Events
+document.addEventListener('click', function(e) {
+  if (typeof gtag !== 'function') return;
+
+  // WhatsApp click
+  var waLink = e.target.closest('a[href*="wa.me"]');
+  if (waLink) {
+    gtag('event', 'whatsapp_click', { event_category: 'contact', event_label: waLink.href });
+  }
+
+  // Telegram click
+  var tgLink = e.target.closest('a[href*="t.me"]');
+  if (tgLink) {
+    gtag('event', 'telegram_click', { event_category: 'contact', event_label: tgLink.href });
+  }
+
+  // Email click
+  var mailLink = e.target.closest('a[href^="mailto:"]');
+  if (mailLink) {
+    gtag('event', 'email_click', { event_category: 'contact', event_label: mailLink.href });
+  }
+
+  // CTA button clicks
+  var ctaBtn = e.target.closest('.bp, .nav-cta');
+  if (ctaBtn) {
+    gtag('event', 'cta_click', { event_category: 'engagement', event_label: ctaBtn.textContent.trim() });
+  }
+
+  // Destination card clicks
+  var destCard = e.target.closest('.dc[data-nav]');
+  if (destCard) {
+    gtag('event', 'destination_click', { event_category: 'navigation', event_label: destCard.dataset.nav });
+  }
+});
+
+// Track form submission
+document.addEventListener('submit', function(e) {
+  if (typeof gtag !== 'function') return;
+  var form = e.target.closest('#partner-form');
+  if (form) {
+    gtag('event', 'partner_form_submit', { event_category: 'conversion', event_label: 'partner_application' });
+  }
+});
+</script>
 </body>
 </html>

@@ -24,6 +24,7 @@ export function partnerForm() {
     '<input type="hidden" name="_subject" value="New Desera Partner Application">' +
     '<input type="hidden" name="_captcha" value="false">' +
     '<input type="hidden" name="_template" value="table">' +
+    '<input type="hidden" name="_autoresponse" value="Thank you for your partnership application with Desera Travel! We have received your request and our team will respond within 2 business hours. In the meantime, feel free to reach us on WhatsApp: https://wa.me/992752553366 — Desera Travel Team">' +
     '<div style="text-align:center;margin-top:24px">' +
       '<button type="submit" class="bp" id="form-submit-btn">' + (E ? 'Отправить заявку \u2192' : 'Submit application \u2192') + '</button>' +
       '<p id="form-error" style="font-size:13px;color:#e53e3e;margin-top:12px;display:none"></p>' +

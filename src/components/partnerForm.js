@@ -6,7 +6,7 @@ export const FORM_EMAIL = 'reservation@desera.travel';
 
 export function partnerForm() {
   const E = getLang() === 'ru';
-  return '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Партнёрство' : 'Partnership') + '</div><h2 class="stitle">' + (E ? 'Станьте партнёром Desera' : 'Become a Desera partner') + '</h2><p class="sdesc">' + (E ? 'Заполните форму — мы ответим в течение 2 часов.' : 'Fill out the form — we respond within 2 hours.') + '</p></div>' +
+  return '<section class="sec" style="background:#fff"><div class="con"><div class="sh"><div class="stag">' + (E ? 'Партнёрство' : 'Partnership') + '</div><h2 class="stitle">' + (E ? 'Станьте партнёром Desera' : 'Become a Desera partner') + '</h2><p class="sdesc">' + (E ? 'Попробуйте бесплатно. Отправьте первый запрос — получите ответ за 2 часа. Без обязательств.' : 'Try for free. Send your first request — get a response in 2 hours. No commitment.') + '</p></div>' +
     '<form class="form-box" id="partner-form" novalidate>' +
     '<div id="form-success" style="display:none;text-align:center;padding:40px 0">' +
       '<div style="font-size:48px;margin-bottom:16px">✅</div>' +

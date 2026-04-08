@@ -10,7 +10,7 @@ export const blogPostsRu = {
 <p>На основе опыта работы с сотнями турагентств по всему миру мы выделили 10 ключевых вопросов для оценки DMC.</p>
 
 <h2>1. Специализируются ли они на вашем направлении \u2014 или распыляются?</h2>
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200" alt="Dubai skyline representing DMC destination specialization" loading="lazy">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=75&fm=webp" alt="Dubai skyline representing DMC destination specialization" loading="lazy">
 <p>DMC, который заявляет, что работает \u00abвезде\u00bb, часто нигде не работает хорошо. Лучшие DMC имеют глубокое присутствие на местах: физические офисы, налаженные отношения с поставщиками и экспертизу по конкретным направлениям.</p>
 <p><strong>Красный флаг:</strong> DMC, указывающий 50+ стран при наличии одного офиса. Скорее всего, они перепродают продукт другого DMC.</p>
 <p>Оптимальный вариант \u2014 DMC, покрывающий 10\u201315 направлений с реальными локальными командами в каждом. Достаточно разнообразия для вашего агентства и достаточно глубины для качественного исполнения.</p>
@@ -26,7 +26,7 @@ export const blogPostsRu = {
 <p>Проверьте: отправьте запрос в пятницу вечером. Посмотрите, придёт ли ответ к утру понедельника.</p>
 
 <h2>4. Что происходит, когда проблема возникает в 2 часа ночи?</h2>
-<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200" alt="Emergency travel support and 24/7 DMC assistance" loading="lazy">
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=75&fm=webp" alt="Emergency travel support and 24/7 DMC assistance" loading="lazy">
 <p>Рейс вашего клиента отменён. Он в аэропорту Дубая в 2 часа ночи с двумя детьми и без трансфера. Что происходит дальше? Именно здесь хорошие DMC становятся отличными.</p>
 <p><strong>Проверка:</strong> Позвоните на их экстренный номер в воскресенье вечером. Если ответит живой человек \u2014 вы нашли серьёзного партнёра.</p>
 
@@ -48,7 +48,7 @@ export const blogPostsRu = {
 <p>Вы отправляете депозиты клиентов этой компании. Проверьте: сколько лет на рынке, наличие лицензий, страхование ответственности, членство в отраслевых ассоциациях (IATA, ASTA). Стандартные условия: 30% предоплата при бронировании, остаток за 30 дней до прибытия. Более агрессивные условия требуют дополнительной проверки.</p>
 
 <h2>10. Инвестируют ли они в отношения \u2014 или только в транзакцию?</h2>
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" alt="DMC partnership and team collaboration" loading="lazy">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=75&fm=webp" alt="DMC partnership and team collaboration" loading="lazy">
 <p>Лучшие DMC-партнёрства ощущаются как продолжение вашей команды. Ищите: выделенного менеджера, проактивные обновления по направлениям, приглашения на FAM-поездки, обучающие материалы, готовность создавать индивидуальные продукты и регулярные обзоры эффективности.</p>
 
 <h2>Итог</h2>
@@ -76,14 +76,14 @@ export const blogPostsRu = {
 <h2>Самые продаваемые продукты для агентов</h2>
 
 <h3>1. Пустынное сафари \u2014 продукт №1</h3>
-<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200" alt="Dubai desert safari with dune bashing at sunset" loading="lazy">
+<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200&q=75&fm=webp" alt="Dubai desert safari with dune bashing at sunset" loading="lazy">
 <p>Каждый клиент, посещающий Дубай, хочет пустынное сафари. Доступно ежедневно, 6 часов, включает езду по дюнам, катание на верблюдах, ужин-барбекю под звёздами. Премиум-версии добавляют шоу с соколами, приватные лагеря и люксовый ужин. Потенциал маржи: 20\u201330% от нетто-тарифов.</p>
 
 <h3>2. Бурдж-Халифа \u2014 At the Top</h3>
 <p>Билеты без очереди на уровни 124, 125 и 148. Слоты на закат продаются с наценкой. Комбинируйте с туром по Dubai Mall для повышения стоимости пакета. Маржа: 15\u201325%.</p>
 
 <h3>3. Однодневная поездка в Абу-Даби</h3>
-<img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1200" alt="Sheikh Zayed Grand Mosque Abu Dhabi day trip" loading="lazy">
+<img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1200&q=75&fm=webp" alt="Sheikh Zayed Grand Mosque Abu Dhabi day trip" loading="lazy">
 <p>Мечеть Шейха Зайда, Лувр Абу-Даби, Emirates Palace, Yas Island. Полнодневный тур из Дубая. Одна из экскурсий с наивысшим уровнем удовлетворённости \u2014 клиенты стабильно ставят 4.8+/5.</p>
 
 <h3>4. Круиз на дау \u2014 Марина или Крик</h3>
@@ -134,11 +134,11 @@ export const blogPostsRu = {
 <h2>Лёгкость продажи</h2>
 
 <h3>Таиланд: лёгкая продажа</h3>
-<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1200" alt="Thailand beaches and temples easy sell for travel agents" loading="lazy">
+<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1200&q=75&fm=webp" alt="Thailand beaches and temples easy sell for travel agents" loading="lazy">
 <p>Таиланд продаёт себя сам. Клиенты уже знают о пляжах, еде и храмах. Ваша задача \u2014 пакетирование, а не убеждение. Безвизовый для большинства национальностей. Отличная туристическая инфраструктура. Широкий выбор отелей от $30/ночь до $3,000/ночь.</p>
 
 <h3>Вьетнам: продажа-открытие</h3>
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1200" alt="Vietnam Ha Long Bay discovery destination for agencies" loading="lazy">
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=75&fm=webp" alt="Vietnam Ha Long Bay discovery destination for agencies" loading="lazy">
 <p>Вьетнам требует больше разъяснений, но вознаграждает вау-эффектом. Клиенты, побывавшие там, возвращаются в восторге. Бухта Халонг, Хойан и уличная еда Сайгона создают истории, которые они расскажут всем \u2014 генерируя рекомендации для вас. Нужна электронная виза, но оформляется легко.</p>
 
 <h2>Сравнение маржи</h2>
@@ -197,7 +197,7 @@ export const blogPostsRu = {
 <p>Anantara, Conrad, W Maldives, Niyama. Золотая середина \u2014 люксовый опыт по цене, доступной большему числу клиентов. Самый объёмный сегмент для большинства агентств.</p>
 
 <h3>Средний сегмент ($200\u2013$500/ночь)</h3>
-<img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800" alt="Maldives mid-range overwater villas for budget honeymooners" loading="lazy">
+<img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=75&fm=webp" alt="Maldives mid-range overwater villas for budget honeymooners" loading="lazy">
 <p>Bandos, Adaaran, Meeru, Fihalhohi. Не стоит недооценивать этот сегмент \u2014 он открывает Мальдивы для молодожёнов с ограниченным бюджетом. Хорошая маржа и высокая конверсия.</p>
 
 <h2>Самые продаваемые пакеты</h2>
@@ -234,7 +234,7 @@ export const blogPostsRu = {
 </ul>
 
 <h2>Весна (Март \u2013 Май): сезон цветения сакуры</h2>
-<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="Japan cherry blossom season spring travel guide" loading="lazy">
+<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=75&fm=webp" alt="Japan cherry blossom season spring travel guide" loading="lazy">
 <p>Пик Японии. Сакура цветёт с конца марта до середины апреля, продвигаясь с юга на север. Токио зацветает примерно 25 марта \u2013 5 апреля. Киото \u2014 на 5\u20137 дней позже. Отели раскупают за 3\u20134 месяца. В этот период вы продадите больше всего Японии \u2014 но маржа будет самой тонкой из-за высокого спроса. Бронируйте заранее и пакетируйте трансферы + отели для лучших тарифов.</p>
 
 <h2>Осень (Сентябрь \u2013 Ноябрь): умный выбор</h2>
@@ -282,7 +282,7 @@ export const blogPostsRu = {
 <p>Когда вы продаёте отель отдельно, клиент сравнивает вашу цену с Booking.com. Когда вы продаёте пакет (отель + трансферы + 2 экскурсии), прямого сравнения нет. Вы создали уникальный продукт. Пакетируйте нетто-тарифы от DMC с достойной наценкой, и клиент воспринимает ценность \u2014 а не стоимость.</p>
 
 <h2>3. Продавайте премиум-впечатления</h2>
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" alt="Premium travel experiences upsell for higher agency margins" loading="lazy">
+<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=75&fm=webp" alt="Premium travel experiences upsell for higher agency margins" loading="lazy">
 <p><strong>$200\u2013500</strong> дополнительной маржи на бронирование от VIP-апселлов</p>
 <p>Апгрейд пустынного сафари (стандарт на VIP): $80 дополнительной маржи. Приватная яхта вместо группового круиза: $300 дополнительно. Вертолётный тур: $150 дополнительно. Апгрейд до сьюта в отеле: $100+ дополнительно. Всегда предлагайте премиум-вариант. 20\u201330% клиентов согласятся.</p>
 

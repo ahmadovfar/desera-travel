@@ -16,10 +16,58 @@ var allBlogRu = Object.assign({}, blogPostsRu, blogPostsRu2);
 import { renderPrivacy } from './pages/privacy.js';
 import { renderTerms } from './pages/terms.js';
 
-// ---- NAV DROPDOWN ----
-const ddhtml = COUNTRIES.map(c => '<a data-nav="' + c.id + '"><span class="fl">' + c.flag + '</span>' + c.n + '</a>').join('');
-document.getElementById('nav-dd').innerHTML = ddhtml;
-document.getElementById('ft-dd').innerHTML = COUNTRIES.slice(0, 6).map(c => '<a data-nav="' + c.id + '">' + c.flag + ' ' + c.n + '</a>').join('');
+// ---- MEGA-MENU ----
+var regions = {
+  en: [
+    { name: 'Middle East', countries: ['uae', 'egypt'] },
+    { name: 'Asia', countries: ['thailand', 'vietnam', 'china', 'japan', 'indonesia'] },
+    { name: 'Europe & Turkey', countries: ['europe', 'turkey'] },
+    { name: 'Islands', countries: ['maldives', 'mauritius'] }
+  ],
+  ru: [
+    { name: 'Ближний Восток', countries: ['uae', 'egypt'] },
+    { name: 'Азия', countries: ['thailand', 'vietnam', 'china', 'japan', 'indonesia'] },
+    { name: 'Европа и Турция', countries: ['europe', 'turkey'] },
+    { name: 'Острова', countries: ['maldives', 'mauritius'] }
+  ]
+};
+
+function buildMegaMenu() {
+  var E = getLang() === 'ru';
+  var lang = E ? 'ru' : 'en';
+  var html = '<div class="mega-search"><input type="text" class="mega-search-input" placeholder="' + (E ? 'Поиск направления...' : 'Search destination...') + '" oninput="filterDestinations(this.value)"></div>';
+  html += '<div class="mega-grid">';
+  regions[lang].forEach(function(region) {
+    html += '<div class="mega-region">';
+    html += '<div class="mega-region-title">' + region.name + '</div>';
+    region.countries.forEach(function(cid) {
+      var c = COUNTRIES.find(function(x) { return x.id === cid; });
+      if (c) {
+        var name = E ? c.nr : c.n;
+        html += '<a class="mega-country" data-nav="' + c.id + '" data-search="' + c.n + ' ' + c.nr + '">' +
+          '<span class="fl">' + c.flag + '</span>' + name + '</a>';
+      }
+    });
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+document.getElementById('nav-dd').innerHTML = buildMegaMenu();
+document.getElementById('ft-dd').innerHTML = COUNTRIES.slice(0, 6).map(function(c) { return '<a data-nav="' + c.id + '">' + c.flag + ' ' + c.n + '</a>'; }).join('');
+
+window.filterDestinations = function(query) {
+  var q = query.toLowerCase();
+  document.querySelectorAll('.mega-country').forEach(function(el) {
+    var name = el.getAttribute('data-search').toLowerCase();
+    el.style.display = name.indexOf(q) > -1 ? '' : 'none';
+  });
+  document.querySelectorAll('.mega-region').forEach(function(el) {
+    var visible = el.querySelectorAll('.mega-country:not([style*="display: none"])');
+    el.style.display = visible.length > 0 ? '' : 'none';
+  });
+};
 
 // ---- ROUTING ----
 function pageToPath(p) {
@@ -65,6 +113,7 @@ function go(p, pushState = true) {
     window.scrollTo(0, 0);
     document.getElementById('nb').className = 'dk';
     updateNavLang();
+    updateStickyCta();
     updateMeta(p, c);
     app.style.opacity = '1';
     app.style.transform = 'translateY(0)';
@@ -132,8 +181,10 @@ function updateNavLang() {
   if (links[1]) links[1].textContent = E ? 'О нас' : 'About';
   if (links[2]) links[2].textContent = E ? 'Блог' : 'Blog';
   if (links[3]) links[3].textContent = E ? 'Контакты' : 'Contact';
-  const ddSpan = document.querySelector('.dd-wrap > span');
+  var ddSpan = document.querySelector('.dd-wrap > span');
   if (ddSpan) ddSpan.innerHTML = (E ? 'Направления' : 'Destinations') + ' <span style="font-size:10px">▾</span>';
+  var megaDD = document.getElementById('nav-dd');
+  if (megaDD) megaDD.innerHTML = buildMegaMenu();
 }
 
 // ---- FORM SUBMISSION ----
@@ -287,10 +338,10 @@ function updateMeta(p, country) {
   } else {
     title = base + ' — Global DMC Partner';
     desc = E ? 'Исключительные travel-продукты в 11+ направлениях мира.' : 'Extraordinary travel experiences across 11+ destinations.';
-    img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200';
+    img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=75&fm=webp';
   }
 
-  if (!img) img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200';
+  if (!img) img = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=75&fm=webp';
   const url = 'https://desera.travel' + pageToPath(p);
 
   document.title = title;
@@ -438,12 +489,23 @@ function toggleMenu() {
 window.toggleMenu = toggleMenu;
 
 function closeMenu() {
-  const burger = document.getElementById('burger');
-  const nl = document.getElementById('nl');
+  var burger = document.getElementById('burger');
+  var nl = document.getElementById('nl');
   burger.classList.remove('open');
   nl.classList.remove('open');
   burger.setAttribute('aria-expanded', 'false');
 }
+
+// ---- MOBILE ACCORDION for countries dropdown ----
+document.addEventListener('click', function (e) {
+  if (window.innerWidth > 900) return;
+  var ddWrap = e.target.closest('.dd-wrap');
+  if (ddWrap && e.target.closest('.dd-wrap > span')) {
+    e.preventDefault();
+    e.stopPropagation();
+    ddWrap.classList.toggle('accordion-open');
+  }
+});
 
 // ---- DARK MODE ----
 function toggleDark() {
@@ -465,10 +527,19 @@ function tick() {
 }
 setInterval(tick, 30000);
 
-// ---- BACK TO TOP ----
-window.addEventListener('scroll', () => {
-  const b = document.getElementById('btt');
+// ---- BACK TO TOP & STICKY CTA ----
+window.addEventListener('scroll', function() {
+  var b = document.getElementById('btt');
   if (b) b.classList.toggle('show', window.scrollY > 400);
+  var stickyCta = document.getElementById('sticky-cta');
+  if (stickyCta) {
+    var isCountry = COUNTRIES.some(function(x) { return x.id === getCurPage(); });
+    if (isCountry && window.scrollY > 400) {
+      stickyCta.classList.add('show');
+    } else {
+      stickyCta.classList.remove('show');
+    }
+  }
 });
 
 // ---- SCROLL ANIMATIONS ----
@@ -503,11 +574,11 @@ function animateCounters() {
 
 // ---- HERO SLIDESHOW ----
 const heroImages = [
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920',
-  'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1920',
-  'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920',
-  'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920',
-  'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920'
+  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=75&fm=webp',
+  'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1920&q=75&fm=webp',
+  'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=75&fm=webp',
+  'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920&q=75&fm=webp',
+  'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=75&fm=webp'
 ];
 let heroIdx = 0;
 function heroBg(i) {
@@ -569,6 +640,55 @@ window.tbStep = function (n) {
 window.tbNext = function () {
   if (tbCur < 4) window.tbStep(tbCur + 1);
   else alert(getLang() === 'ru' ? 'Спасибо! Предложение в течение 2 часов.' : 'Thank you! Proposal within 2 hours.');
+};
+
+// ---- STICKY CTA TEXT ----
+function updateStickyCta() {
+  var stickyCta = document.getElementById('sticky-cta');
+  if (!stickyCta) return;
+  var E = getLang() === 'ru';
+  stickyCta.textContent = E ? 'Запросить нетто \u2192' : 'Request rates \u2192';
+}
+
+// ---- WHATSAPP AUTO-POPUP ----
+(function() {
+  if (sessionStorage.getItem('wa_shown')) return;
+  setTimeout(function() {
+    var E = getLang() === 'ru';
+    var waBtn = document.querySelector('.wa-float');
+    if (!waBtn) return;
+    var popup = document.createElement('div');
+    popup.className = 'wa-popup';
+    popup.innerHTML = '<div class="wa-popup-text">' + (E ? 'Привет! Нужны тарифы по направлению? Напишите — ответим за 2 часа 😊' : 'Hi! Need destination rates? Message us — we reply within 2 hours 😊') + '</div><button class="wa-popup-close" onclick="this.parentElement.remove()">&times;</button>';
+    waBtn.parentElement.insertBefore(popup, waBtn);
+    sessionStorage.setItem('wa_shown', '1');
+    setTimeout(function() { popup.remove(); }, 8000);
+  }, 15000);
+})();
+
+// ---- EXIT INTENT POPUP (desktop only) ----
+(function() {
+  if (window.innerWidth < 900) return;
+  var shown = false;
+  document.addEventListener('mouseout', function(e) {
+    if (shown || sessionStorage.getItem('exit_shown')) return;
+    if (e.clientY < 5 && e.relatedTarget === null) {
+      shown = true;
+      sessionStorage.setItem('exit_shown', '1');
+      var E = getLang() === 'ru';
+      var overlay = document.createElement('div');
+      overlay.id = 'exit-overlay';
+      overlay.innerHTML = '<div class="exit-popup"><button class="exit-close" onclick="document.getElementById(\'exit-overlay\').remove()">&times;</button><h3>' + (E ? 'Подождите!' : 'Wait!') + '</h3><p>' + (E ? 'Хотите получить нетто-тарифы по любому направлению?' : 'Want to get net rates for any destination?') + '</p><form onsubmit="event.preventDefault();submitExitForm(this)"><input type="email" name="email" placeholder="Email" required style="width:100%;padding:14px;border:1px solid var(--g200);border-radius:12px;font-size:16px;margin-bottom:12px;font-family:var(--fb)"><button type="submit" class="bp" style="width:100%;text-align:center">' + (E ? 'Получить тарифы' : 'Get rates') + '</button></form></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+
+window.submitExitForm = function(form) {
+  var email = form.querySelector('input[name="email"]').value;
+  go('partner');
+  var overlay = document.getElementById('exit-overlay');
+  if (overlay) overlay.remove();
 };
 
 // ---- INIT ----

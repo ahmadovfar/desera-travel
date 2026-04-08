@@ -5,7 +5,7 @@ export const blogPosts = [
     category: 'Industry Guide',
     readTime: '8 min',
     date: '2026-03-28',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=75&fm=webp',
     excerpt: 'Choosing the right DMC partner is one of the most impactful decisions for a travel agency. After working with hundreds of agencies, we distilled the evaluation process into 10 critical questions.',
     metaDesc: '10 critical questions to evaluate DMC partners \u2014 from rate transparency to emergency support.',
     keywords: 'how to choose DMC partner, find DMC, B2B travel partner',
@@ -14,7 +14,7 @@ export const blogPosts = [
 <p>After working with hundreds of travel agencies worldwide, we\u2019ve distilled the DMC evaluation process into 10 critical questions.</p>
 
 <h2>1. Do they specialize in your destination \u2014 or spread too thin?</h2>
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200" alt="Dubai skyline representing DMC destination specialization" loading="lazy">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=75&fm=webp" alt="Dubai skyline representing DMC destination specialization" loading="lazy">
 <p>A DMC that claims to cover \u2018everywhere\u2019 often covers nowhere well. The best DMCs have deep, on-the-ground presence in their destinations with physical offices, established supplier relationships, and destination-specific expertise.</p>
 <p><strong>Red flag:</strong> A DMC listing 50+ countries with only one office. They\u2019re likely reselling another DMC\u2019s product.</p>
 <p>The sweet spot is a DMC covering 10\u201315 destinations with genuine local teams in each. Enough variety for your agency, enough depth for quality execution.</p>
@@ -30,7 +30,7 @@ export const blogPosts = [
 <p>Test it: send an inquiry on a Friday evening. See if you get a response by Monday morning.</p>
 
 <h2>4. What happens when things go wrong at 2 AM?</h2>
-<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200" alt="Emergency travel support and 24/7 DMC assistance" loading="lazy">
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=75&fm=webp" alt="Emergency travel support and 24/7 DMC assistance" loading="lazy">
 <p>Your client\u2019s flight was cancelled. They\u2019re at Dubai airport at 2 AM with two kids and no transfer. What happens next? This is where good DMCs become great ones.</p>
 <p><strong>Test:</strong> Call their emergency number on a Sunday night. If a real person answers \u2014 you\u2019ve found a serious partner.</p>
 
@@ -52,7 +52,7 @@ export const blogPosts = [
 <p>You\u2019re sending client deposits to this company. Check: how long in business, proper licensing, liability insurance, industry memberships (IATA, ASTA). Standard terms: 30% deposit at booking, balance 30 days before arrival. More aggressive terms warrant investigation.</p>
 
 <h2>10. Do they invest in the relationship \u2014 or just the transaction?</h2>
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" alt="DMC partnership and team collaboration" loading="lazy">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=75&fm=webp" alt="DMC partnership and team collaboration" loading="lazy">
 <p>The best DMC partnerships feel like an extension of your team. Look for: dedicated account manager, proactive destination updates, FAM trip invitations, training materials, willingness to create custom products, and regular performance reviews.</p>
 
 <h2>The Bottom Line</h2>
@@ -65,7 +65,7 @@ export const blogPosts = [
     category: 'Destination Guide',
     readTime: '10 min',
     date: '2026-03-25',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=75&fm=webp',
     excerpt: 'The UAE isn\u2019t just a destination \u2014 it\u2019s a product portfolio in one country. This guide covers everything a travel agent needs to sell the UAE confidently.',
     metaDesc: 'Complete UAE guide for travel agents: seasonal strategy, top products, packaging tips, and margin optimization.',
     keywords: 'UAE travel agent guide, Dubai tours for agencies, sell UAE packages, DMC Dubai',
@@ -84,14 +84,14 @@ export const blogPosts = [
 <h2>Top-Selling Products for Agents</h2>
 
 <h3>1. Desert Safari \u2014 The #1 Seller</h3>
-<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200" alt="Dubai desert safari with dune bashing at sunset" loading="lazy">
+<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200&q=75&fm=webp" alt="Dubai desert safari with dune bashing at sunset" loading="lazy">
 <p>Every client visiting Dubai wants a desert safari. Available daily, 6 hours, includes dune bashing, camel riding, BBQ dinner under stars. Premium versions add falcon shows, private camps, and luxury dining. Margin potential: 20\u201330% on net rates.</p>
 
 <h3>2. Burj Khalifa \u2014 At the Top</h3>
 <p>Skip-the-line tickets to levels 124, 125, and 148. Sunset slots sell at premium. Bundle with Dubai Mall tour for higher package value. Margin: 15\u201325%.</p>
 
 <h3>3. Abu Dhabi Day Trip</h3>
-<img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1200" alt="Sheikh Zayed Grand Mosque Abu Dhabi day trip" loading="lazy">
+<img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1200&q=75&fm=webp" alt="Sheikh Zayed Grand Mosque Abu Dhabi day trip" loading="lazy">
 <p>Sheikh Zayed Mosque, Louvre Abu Dhabi, Emirates Palace, Yas Island. Full-day tour from Dubai. One of the highest-satisfaction excursions \u2014 clients consistently rate it 4.8+/5.</p>
 
 <h3>4. Dhow Cruise \u2014 Marina or Creek</h3>
@@ -130,7 +130,7 @@ export const blogPosts = [
     category: 'Comparison',
     readTime: '8 min',
     date: '2026-03-22',
-    image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200',
+    image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&q=75&fm=webp',
     excerpt: 'Two of Southeast Asia\u2019s biggest stars. Both affordable, both stunning, both growing fast. But which one delivers better margins, easier sales, and happier clients?',
     metaDesc: 'Thailand vs Vietnam: detailed comparison for travel agents covering margins, client satisfaction, and best-selling packages.',
     keywords: 'Thailand vs Vietnam tourism, Southeast Asia DMC, best margin destinations',
@@ -146,11 +146,11 @@ export const blogPosts = [
 <h2>Ease of Sale</h2>
 
 <h3>Thailand: The Easy Sell</h3>
-<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1200" alt="Thailand beaches and temples easy sell for travel agents" loading="lazy">
+<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1200&q=75&fm=webp" alt="Thailand beaches and temples easy sell for travel agents" loading="lazy">
 <p>Thailand sells itself. Clients already know the beaches, the food, the temples. Your job is packaging, not convincing. Visa-free for most nationalities. Excellent tourism infrastructure. Wide range of hotels from $30/night to $3,000/night.</p>
 
 <h3>Vietnam: The Discovery Sell</h3>
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1200" alt="Vietnam Ha Long Bay discovery destination for agencies" loading="lazy">
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=75&fm=webp" alt="Vietnam Ha Long Bay discovery destination for agencies" loading="lazy">
 <p>Vietnam requires more education but rewards with \u2018wow factor.\u2019 Clients who visit come back amazed. Ha Long Bay, Hoi An, and Saigon street food create stories they\u2019ll tell everyone \u2014 generating referrals for you. E-visa required but easy to arrange.</p>
 
 <h2>Margin Comparison</h2>
@@ -189,7 +189,7 @@ export const blogPosts = [
     category: 'Destination Guide',
     readTime: '7 min',
     date: '2026-03-18',
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200&q=75&fm=webp',
     excerpt: 'The Maldives is the single most profitable destination a travel agent can sell. Average booking value is $5,000\u201315,000 per couple with margins of 20\u201335%.',
     metaDesc: 'Maldives guide for travel agents: wholesale rates, bestselling resorts, package ideas, and margin optimization strategies.',
     keywords: 'Maldives wholesale rates, Maldives DMC B2B, Maldives resort agent rates',
@@ -213,7 +213,7 @@ export const blogPosts = [
 <p>Anantara, Conrad, W Maldives, Niyama. The sweet spot \u2014 luxury experience at a price more clients can afford. Highest volume segment for most agencies.</p>
 
 <h3>Mid-Range ($200\u2013$500/night)</h3>
-<img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800" alt="Maldives mid-range overwater villas for budget honeymooners" loading="lazy">
+<img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=75&fm=webp" alt="Maldives mid-range overwater villas for budget honeymooners" loading="lazy">
 <p>Bandos, Adaaran, Meeru, Fihalhohi. Don\u2019t overlook this segment \u2014 it opens Maldives to budget-conscious honeymooners. Good margins and high conversion rate.</p>
 
 <h2>Bestselling Packages</h2>
@@ -238,7 +238,7 @@ export const blogPosts = [
     category: 'Destination Guide',
     readTime: '7 min',
     date: '2026-03-14',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200',
+    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=75&fm=webp',
     excerpt: 'Japan is a four-season destination, and timing dramatically affects your client\u2019s experience. Here\u2019s how to guide clients to the perfect timing.',
     metaDesc: 'Japan seasonal guide for travel agents: when to send clients, pricing by season, and bestselling packages.',
     keywords: 'Japan best time to visit 2026, Japan cherry blossom season, Japan travel agent tips',
@@ -254,7 +254,7 @@ export const blogPosts = [
 </ul>
 
 <h2>Spring (March \u2013 May): Cherry Blossom Season</h2>
-<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="Japan cherry blossom season spring travel guide" loading="lazy">
+<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=75&fm=webp" alt="Japan cherry blossom season spring travel guide" loading="lazy">
 <p>Peak Japan. Cherry blossoms bloom late March to mid-April, moving from south to north. Tokyo blooms around March 25\u2013April 5. Kyoto 5\u20137 days later. Hotels sell out 3\u20134 months ahead. This is when you\u2019ll sell the most Japan \u2014 but margins are thinnest due to high demand. Book early and package transfers + hotels for better rates.</p>
 
 <h2>Autumn (September \u2013 November): The Smart Pick</h2>
@@ -289,7 +289,7 @@ export const blogPosts = [
     category: 'Business Tips',
     readTime: '6 min',
     date: '2026-03-10',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=75&fm=webp',
     excerpt: 'The average travel agency operates on 10\u201315% margins. Top-performing agencies hit 20\u201330%. The difference isn\u2019t luck \u2014 it\u2019s strategy.',
     metaDesc: '5 proven strategies to increase travel agency margins from 12% to 22%+, including DMC partnerships and premium upselling.',
     keywords: 'travel agency profit margins, increase travel agency revenue, B2B travel rates',
@@ -306,7 +306,7 @@ export const blogPosts = [
 <p>When you sell a hotel separately, the client compares your price to Booking.com. When you sell a package (hotel + transfers + 2 excursions), there\u2019s no direct comparison. You\u2019ve created a unique product. Package net rates from your DMC with a healthy markup, and the client perceives value \u2014 not cost.</p>
 
 <h2>3. Upsell Premium Experiences</h2>
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" alt="Premium travel experiences upsell for higher agency margins" loading="lazy">
+<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=75&fm=webp" alt="Premium travel experiences upsell for higher agency margins" loading="lazy">
 <p><strong>$200\u2013500</strong> additional margin per booking from VIP upsells</p>
 <p>Desert safari upgrade (standard to VIP): $80 extra margin. Private yacht instead of group cruise: $300 extra. Helicopter tour add-on: $150 extra. Suite upgrade at hotel: $100+ extra. Always present the premium option. 20\u201330% of clients will take it.</p>
 
@@ -329,7 +329,7 @@ export const blogPosts = [
     category: 'Industry Insights',
     readTime: '6 min',
     date: '2026-03-06',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=75&fm=webp',
     excerpt: 'Every travel agent faces a choice: book through consumer platforms where rates are visible to clients, or partner with DMCs for net rates. The numbers make the decision obvious.',
     metaDesc: 'Why B2B DMC partnerships deliver 2-3x higher margins than OTA bookings, with real examples and pricing comparisons.',
     keywords: 'B2B travel advantages, DMC vs OTA rates, wholesale travel rates',
@@ -373,7 +373,7 @@ export const blogPosts = [
     category: 'Product Guide',
     readTime: '6 min',
     date: '2026-03-02',
-    image: 'https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200',
+    image: 'https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=1200&q=75&fm=webp',
     excerpt: 'Desert safari is the #1 most-booked excursion in Dubai. Your job isn\u2019t to sell the concept \u2014 it\u2019s to sell the right tier and maximize your margin.',
     metaDesc: 'Complete guide to selling Dubai desert safaris: three tiers, net rates, margin breakdown, and selling tips.',
     keywords: 'Dubai desert safari wholesale, desert safari agent rates, Dubai excursion B2B',
@@ -389,7 +389,7 @@ export const blogPosts = [
 <p>Same activities + private vehicle, falcon photography, luxury camp, premium dining. Duration: 6\u20137 hours. Best for: couples, mid-range clients. This is the sweet spot for margins.</p>
 
 <h3>VIP/Private Safari (Net: $150\u2013400 per person)</h3>
-<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=800" alt="VIP private desert safari Dubai luxury camp experience" loading="lazy">
+<img src="https://images.unsplash.com/photo-1451440063999-77a8b2960d2b?w=800&q=75&fm=webp" alt="VIP private desert safari Dubai luxury camp experience" loading="lazy">
 <p>Exclusive camp, private chef, live music, premium beverages, overnight option. Duration: 7+ hours. Best for: luxury clients, honeymoons, special occasions.</p>
 
 <h2>Margin Breakdown</h2>
@@ -419,7 +419,7 @@ export const blogPosts = [
     category: 'Product Guide',
     readTime: '8 min',
     date: '2026-02-26',
-    image: 'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=1200',
+    image: 'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=1200&q=75&fm=webp',
     excerpt: 'Turkey is a group travel powerhouse offering the perfect mix of history, beaches, cuisine, and Instagram moments at prices that make package margins very attractive.',
     metaDesc: '10 best-selling Turkey group tour packages with net rates, margin potential, and booking tips for agencies.',
     keywords: 'Turkey group tours wholesale, Istanbul tours for agencies, Cappadocia balloon agent rates',
@@ -439,7 +439,7 @@ export const blogPosts = [
 <p>Hagia Sophia, Blue Mosque, Grand Bazaar, Bosphorus cruise, Topkapi Palace. Best for: short groups, corporate add-ons. Net: $180\u2013250/person.</p>
 
 <h3>2. Cappadocia + Istanbul (5 days)</h3>
-<img src="https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=800" alt="Cappadocia hot air balloons Turkey group tour package" loading="lazy">
+<img src="https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=800&q=75&fm=webp" alt="Cappadocia hot air balloons Turkey group tour package" loading="lazy">
 <p>Istanbul 2 days + Cappadocia 2 days with balloon flight. The most photographed combo in Turkey. Net: $350\u2013480/person.</p>
 
 <h3>3. Turkish Riviera Beach (7 days)</h3>
@@ -476,7 +476,7 @@ export const blogPosts = [
     category: 'MICE Guide',
     readTime: '8 min',
     date: '2026-02-22',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=75&fm=webp',
     excerpt: 'Dubai is the Middle East\u2019s premier MICE destination and one of the most profitable segments for travel agencies working with a specialized DMC.',
     metaDesc: 'Complete MICE guide for Dubai: venues, incentive ideas, pricing, and how DMC partnerships help agencies capture corporate margins.',
     keywords: 'MICE Dubai, corporate events Dubai DMC, incentive travel UAE',
@@ -500,7 +500,7 @@ export const blogPosts = [
 <p>Iconic venue for incentive trips and gala dinners. Underwater restaurant for exclusive events. Capacity up to 2,500 for conferences.</p>
 
 <h3>Madinat Jumeirah</h3>
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Madinat Jumeirah Dubai MICE venue with Burj Al Arab backdrop" loading="lazy">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=75&fm=webp" alt="Madinat Jumeirah Dubai MICE venue with Burj Al Arab backdrop" loading="lazy">
 <p>Arabian-themed resort complex. Multiple ballrooms and outdoor venues. Breathtaking Burj Al Arab backdrop. Perfect for premium incentive programs.</p>
 
 <h2>What a DMC Handles for MICE</h2>
@@ -540,7 +540,7 @@ export const blogPosts = [
     category: 'Industry Trends',
     readTime: '7 min',
     date: '2026-02-18',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=75&fm=webp',
     excerpt: '2026 is shaping up to be a record year for global tourism. Post-pandemic revenge travel has matured into sustained demand, but client preferences have shifted.',
     metaDesc: 'Key travel industry trends for 2026: experience-first travel, multi-destination trips, wellness tourism, and what they mean for agencies.',
     keywords: 'travel trends 2026, popular destinations 2026, travel industry forecast',
@@ -558,7 +558,7 @@ export const blogPosts = [
 <p>Clients are spending less percentage on hotels and more on experiences. Cooking classes, cultural immersions, adventure activities, and local encounters now make up 35\u201340% of trip budgets (up from 20% in 2019). This is great news for agents working with DMCs \u2014 excursions carry higher margins than hotel bookings.</p>
 
 <h2>Trend 2: Multi-Destination Trips</h2>
-<img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200" alt="Multi-destination travel trend combining multiple countries" loading="lazy">
+<img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200&q=75&fm=webp" alt="Multi-destination travel trend combining multiple countries" loading="lazy">
 <p>Single-destination trips are declining. Clients want \u2018country combos\u2019: Dubai + Maldives, Thailand + Vietnam, Istanbul + Cappadocia + Greece. This plays perfectly into DMC partnerships \u2014 a global DMC can package multiple countries through one contract.</p>
 <p><strong>47%</strong> of luxury travelers book multi-destination trips (Virtuoso 2025).</p>
 
@@ -586,7 +586,7 @@ export const blogPosts = [
     category: 'Market Analysis',
     readTime: '8 min',
     date: '2026-02-14',
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200',
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200&q=75&fm=webp',
     excerpt: 'China\u2019s outbound tourism market is rebounding strongly and remains the single largest source of international tourists globally.',
     metaDesc: 'Chinese outbound tourism analysis for 2026: market size, tourist preferences, and how agencies can capture this $165B market.',
     keywords: 'Chinese outbound tourism, Chinese tourist market, China travel trends',
@@ -617,7 +617,7 @@ export const blogPosts = [
 <h2>What Chinese Tourists Want</h2>
 
 <h3>Shopping & Luxury</h3>
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Dubai luxury shopping destination for Chinese tourists" loading="lazy">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=75&fm=webp" alt="Dubai luxury shopping destination for Chinese tourists" loading="lazy">
 <p>Chinese tourists spend 3x more on shopping than western counterparts. Luxury brands, gold, electronics, cosmetics. Itineraries should include premium shopping time. Tax-free shopping is a major draw.</p>
 
 <h3>Food & Dining</h3>
